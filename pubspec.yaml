@@ -1,7 +1,7 @@
 name: fluf
-description: "A new Flutter package project."
+description: "Flutter Leveraging User Functions."
 version: 0.0.1
-homepage:
+homepage: https://github.com/3vmartinet/fluf
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
