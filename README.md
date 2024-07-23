@@ -19,7 +19,8 @@ FLUF means Flutter Leveraging User Functions.
     - `theme` : shortcut for `Theme.of(context)`
     - `textTheme` : shortcut for `Theme.of(context).textTheme`
     - `colorScheme`: shortcut for `Theme.of(context).colorScheme`
-    
+- `FutureHolder` : 
+    - Container for `Future`-s with ability to dispose them all on demand.
 
 
 ## Getting started
