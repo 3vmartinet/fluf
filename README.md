@@ -25,6 +25,9 @@ FLUF means Flutter Leveraging User Functions.
     - `isComplete()`: shortcut for snapshot's connection state == `done` and snapshot has data
 - `FutureHolder` : 
     - Container for `Future`-s with ability to dispose them all on demand.
+- Repositories:
+    - `AssetRepo` :
+        - `loadJsonList`
 
 
 ## Getting started

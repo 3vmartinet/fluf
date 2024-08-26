@@ -1,0 +1,8 @@
+{
+    "cmake.configureOnOpen": false,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always",
+        "source.fixAll": "always"
+    },
+    "editor.formatOnSave": true
+}
