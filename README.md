@@ -20,9 +20,9 @@ FLUF means Flutter Leveraging User Functions.
     - `textTheme` : shortcut for `Theme.of(context).textTheme`
     - `colorScheme`: shortcut for `Theme.of(context).colorScheme`
 - `AsyncSnapshot` extensions:
-    - `isReady()`
-    - `isLoading()`
-    - `isComplete()`: shortcut for snapshot's connection state == `done` and snapshot has data
+    - `isReady()`: shortcut for snapshot's connection state == `done` and snapshot has data
+    - `isLoading()`: shortcut for snapshot's connection state == `waiting`
+    - `isComplete()`: 
 - `FutureHolder` : 
     - Container for `Future`-s with ability to dispose them all on demand.
 - Repositories:
