@@ -26,8 +26,12 @@ FLUF means Flutter Leveraging User Functions.
 - `FutureHolder` : 
     - Container for `Future`-s with ability to dispose them all on demand.
 - Repositories:
-    - `AssetRepo` :
+    - `AssetRepo`:
         - `loadJsonList`
+- Factories:
+    - `WidgetBuilderFactory`:
+        - `buildLoadingState`
+        - `buildEmptyState`
 
 
 ## Getting started
