@@ -19,6 +19,10 @@ FLUF means Flutter Leveraging User Functions.
     - `theme` : shortcut for `Theme.of(context)`
     - `textTheme` : shortcut for `Theme.of(context).textTheme`
     - `colorScheme`: shortcut for `Theme.of(context).colorScheme`
+    - `navigator`: shortcut for `Navigator.of(BuildContext)`
+    - `pop()`: shortcut for `Navigator.of(BuildContext).pop()`
+    - `fadeTo(Widget)`: push and replace current widget with given `Widget` with fade animation
+    - `navigateTo(Widget)`: push given `Widget` with slide animation
 - `AsyncSnapshot` extensions:
     - `isReady()`: shortcut for snapshot's connection state == `done` and snapshot has data
     - `isLoading()`: shortcut for snapshot's connection state == `waiting`
