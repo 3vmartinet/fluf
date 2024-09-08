@@ -13,7 +13,7 @@ extension BuildContextExtensions on BuildContext {
     return navigator.pop();
   }
 
-  navigateTo(Widget widget) {
+  Future navigateTo(Widget widget) {
     return navigator.push(_buildRoute(
         widget: widget, duration: const Duration(milliseconds: 500)));
   }

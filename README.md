@@ -23,6 +23,10 @@ FLUF means Flutter Leveraging User Functions.
     - `pop()`: shortcut for `Navigator.of(BuildContext).pop()`
     - `fadeTo(Widget)`: push and replace current widget with given `Widget` with fade animation
     - `navigateTo(Widget)`: push given `Widget` with slide animation
+- `Color` extensions:
+    - `minusDelta(int)`: color with subtracted `delta` in each of RGB values
+    - `plusDelta(int)`: color with added `delta` in each of RGB values
+    - `asPressableProperty()`: `WidgetStateProperty` with reduced opacity for pressed state
 - `AsyncSnapshot` extensions:
     - `isReady()`: shortcut for snapshot's connection state == `done` and snapshot has data
     - `isLoading()`: shortcut for snapshot's connection state == `waiting`
