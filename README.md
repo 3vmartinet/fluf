@@ -37,8 +37,9 @@ FLUF means Flutter Leveraging User Functions.
 - `isLoading()`: shortcut for snapshot's connection state == `waiting`
 - `isComplete()`: 
 
-#### Scope extensions:
+#### Object scope extensions:
 - `let(Function(T))`: invoke lambda passing receiver object
+- `asWidgetStateProperty(Map<WidgetState, T>)`: map object as `WidgetStateProperty`
 
 ### Helpers
 
