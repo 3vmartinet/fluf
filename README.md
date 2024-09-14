@@ -15,31 +15,45 @@ Welcome to FLUF, the package that provides convenience functions to develop your
 FLUF means Flutter Leveraging User Functions.
 
 ## Features
- - `BuildContext` extensions:
-    - `theme` : shortcut for `Theme.of(context)`
-    - `textTheme` : shortcut for `Theme.of(context).textTheme`
-    - `colorScheme`: shortcut for `Theme.of(context).colorScheme`
-    - `navigator`: shortcut for `Navigator.of(BuildContext)`
-    - `pop()`: shortcut for `Navigator.of(BuildContext).pop()`
-    - `fadeTo(Widget)`: push and replace current widget with given `Widget` with fade animation
-    - `navigateTo(Widget)`: push given `Widget` with slide animation
-- `Color` extensions:
-    - `minusDelta(int)`: color with subtracted `delta` in each of RGB values
-    - `plusDelta(int)`: color with added `delta` in each of RGB values
-    - `asPressableProperty()`: `WidgetStateProperty` with reduced opacity for pressed state
-- `AsyncSnapshot` extensions:
-    - `isReady()`: shortcut for snapshot's connection state == `done` and snapshot has data
-    - `isLoading()`: shortcut for snapshot's connection state == `waiting`
-    - `isComplete()`: 
-- `FutureHolder` : 
-    - Container for `Future`-s with ability to dispose them all on demand.
-- Repositories:
-    - `AssetRepo`:
-        - `loadJsonList`
-- Factories:
-    - `WidgetBuilderFactory`:
-        - `buildLoadingState`
-        - `buildEmptyState`
+
+### Extensions
+
+#### `BuildContext` extensions:
+- `theme` : shortcut for `Theme.of(context)`
+- `textTheme` : shortcut for `Theme.of(context).textTheme`
+- `colorScheme`: shortcut for `Theme.of(context).colorScheme`
+- `navigator`: shortcut for `Navigator.of(BuildContext)`
+- `pop()`: shortcut for `Navigator.of(BuildContext).pop()`
+- `fadeTo(Widget)`: push and replace current widget with given `Widget` with fade animation
+- `navigateTo(Widget)`: push given `Widget` with slide animation
+
+#### `Color` extensions:
+- `minusDelta(int)`: color with subtracted `delta` in each of RGB values
+- `plusDelta(int)`: color with added `delta` in each of RGB values
+- `asPressableProperty()`: `WidgetStateProperty` with reduced opacity for pressed state
+
+#### `AsyncSnapshot` extensions:
+- `isReady()`: shortcut for snapshot's connection state == `done` and snapshot has data
+- `isLoading()`: shortcut for snapshot's connection state == `waiting`
+- `isComplete()`: 
+
+#### Scope extensions:
+- `let(Function(T))`: invoke lambda passing receiver object
+
+### Helpers
+
+#### `FutureHolder` : 
+- Container for `Future`-s with ability to dispose them all on demand.
+
+#### `WidgetBuilderFactory`:
+- `buildLoadingState`
+- `buildEmptyState`
+
+### Repositories
+
+#### `AssetRepo`:
+- `loadJsonList`
+
 
 
 ## Getting started
