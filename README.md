@@ -59,6 +59,9 @@ FLUF means Flutter Leveraging User Functions.
 #### `AssetRepo`:
 - `loadJsonList`
 
+#### `ColorRepo`:
+- `compute(Characters)`: compute and cache average color of each emoji from given characters
+- `get(String)`: get given emoji's color, or null
 
 
 ## Getting started
