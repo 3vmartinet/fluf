@@ -18,7 +18,7 @@ extension StringExtensions on String {
     return paragraph;
   }
 
-  Future<Color> computeColorFromEmojiString() async {
+  Future<Color> color() async {
     const size = _drawSize;
     final recorder = ui.PictureRecorder();
 
