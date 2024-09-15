@@ -41,6 +41,10 @@ FLUF means Flutter Leveraging User Functions.
 - `let(Function(T))`: invoke lambda passing receiver object
 - `asWidgetStateProperty(Map<WidgetState, T>)`: map object as `WidgetStateProperty`
 
+#### `String` extensions:
+- `toParagraph()`: map to `dart:ui` `Paragraph`
+- `async color()`: compute average color (for emojis) 
+
 ### Helpers
 
 #### `FutureHolder` : 
