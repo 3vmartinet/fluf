@@ -3,13 +3,10 @@ import 'package:flutter/material.dart';
 class ThemeRepo {
   static ThemeRepo? _instance;
 
-  late final BuildContext _context;
+  factory ThemeRepo() => _instance ?? ThemeRepo._init();
 
-  factory ThemeRepo({required BuildContext context}) =>
-      _instance ?? ThemeRepo._init(context: context);
-
-  ThemeRepo._init({required BuildContext context}) {
-    _context = context;
+  ThemeRepo._init() {
+    _instance = this;
   }
 
   ThemeData lightTheme() {
