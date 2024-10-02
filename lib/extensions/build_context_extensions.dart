@@ -9,6 +9,10 @@ extension BuildContextExtensions on BuildContext {
 
   NavigatorState get navigator => Navigator.of(this);
 
+  void showSnackBar(Widget content) {
+    ScaffoldMessenger.of(this).showSnackBar(SnackBar(content: content));
+  }
+
   void pop() {
     return navigator.pop();
   }

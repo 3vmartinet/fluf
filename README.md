@@ -26,6 +26,7 @@ FLUF means Flutter Leveraging User Functions.
 - `pop()`: shortcut for `Navigator.of(BuildContext).pop()`
 - `fadeTo(Widget)`: push and replace current widget with given `Widget` with fade animation
 - `navigateTo(Widget)`: push given `Widget` with slide animation
+- `showSnackBar(Widget)` : show a SnackBar with given `content`, using context`s ScaffoldMessenger
 
 #### `Color` extensions:
 - `minusDelta(int)`: color with subtracted `delta` in each of RGB values
@@ -67,6 +68,13 @@ FLUF means Flutter Leveraging User Functions.
 - `lightTheme()`: Material 3 light theme data
 - `darkTheme()`: Material 3 dark theme data
 
+### Mixins
+
+#### `AnimateOnPressMixin`
+ - Set a value (origin 1.0) back and forth from `press()` to `release()` mixin calls. E.g : Create a widget that animates when it is pressed, and animates back once released.
+
+#### `AnimateOnPressHapticMixin`
+ - Implementation of `ScaleOnPressMixin` which also triggers haptic feedback.
 
 ## Getting started
 
