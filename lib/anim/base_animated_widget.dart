@@ -1,4 +1,4 @@
-import 'package:fluf/extensions/scope_extensions.dart';
+import 'package:fluf/extensions/object_scope_extensions.dart';
 import 'package:fluf/future/future_holder.dart';
 import 'package:flutter/material.dart';
 
