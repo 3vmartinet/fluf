@@ -76,8 +76,12 @@ FLUF means Flutter Leveraging User Functions.
 #### `AnimateOnPressMixin`
  - Set a value (origin 1.0) back and forth from `press()` to `release()` mixin calls. E.g : Create a widget that animates when it is pressed, and animates back once released.
 
-#### `AnimateOnPressHapticMixin`
- - Implementation of `ScaleOnPressMixin` which also triggers haptic feedback.
+#### `HapticFeedbackMixin`
+- `lightHapticFeedback()`
+- `mediumHapticFeedback()`
+- `heavyHapticFeedback()`
+- `selectionHapticFeedback()`
+- `vibrateFeedback()`
 
 ## Getting started
 

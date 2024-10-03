@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 const double _origin = 1.0;
 
 mixin AnimateOnPressMixin<T extends StatefulWidget> on State<T> {
-  abstract double target;
+  abstract double animationTarget;
 
   double _value = _origin;
-  double get value => _value;
+  double get animationValue => _value;
 
   void press() {
-    _value = target;
+    _value = animationTarget;
     _pressed();
   }
 
