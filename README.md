@@ -46,6 +46,9 @@ FLUF means Flutter Leveraging User Functions.
 - `toParagraph()`: map to `dart:ui` `Paragraph`
 - `async color()`: compute average color (for emojis) 
 
+#### `TextStyle` extensions:
+- `bold()`: copy of this TextStlye with bold font weight
+
 ### Helpers
 
 #### `FutureHolder` : 

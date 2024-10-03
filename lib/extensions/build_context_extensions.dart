@@ -13,8 +13,8 @@ extension BuildContextExtensions on BuildContext {
     ScaffoldMessenger.of(this).showSnackBar(SnackBar(content: content));
   }
 
-  void pop() {
-    return navigator.pop();
+  void pop({Object? result}) {
+    return navigator.pop(result);
   }
 
   Future navigateTo(Widget widget) {
