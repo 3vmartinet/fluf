@@ -4,6 +4,10 @@ class FutureHolder {
 
   bool isDisposed() => _disposed;
 
+  FutureHolder operator +(Future future) {
+    return this..add(future);
+  }
+
   Future add(Future future) {
     if (!_disposed) {
       _futures.add(future);

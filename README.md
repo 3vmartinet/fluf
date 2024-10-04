@@ -52,7 +52,7 @@ FLUF means Flutter Leveraging User Functions.
 ### Helpers
 
 #### `FutureHolder` : 
-- Container for `Future`-s with ability to dispose them all on demand.
+- Container for `Future`-s with ability to dispose them all on demand
 
 #### `WidgetBuilderFactory`:
 - `buildLoadingState`
