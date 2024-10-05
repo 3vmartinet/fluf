@@ -10,10 +10,16 @@ class ThemeRepo {
   }
 
   ThemeData lightTheme() {
-    return ThemeData.light(useMaterial3: true).copyWith();
+    return ThemeData(
+      brightness: Brightness.light,
+      useMaterial3: true,
+    );
   }
 
   ThemeData darkTheme() {
-    return ThemeData.dark(useMaterial3: true).copyWith();
+    return ThemeData(
+      brightness: Brightness.dark,
+      useMaterial3: true,
+    );
   }
 }
