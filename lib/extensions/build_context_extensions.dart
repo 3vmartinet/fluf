@@ -24,10 +24,16 @@ extension BuildContextExtensions on BuildContext {
 
   Future<void> fadeTo({
     required Widget widget,
+    bool replace = true,
     Duration duration = const Duration(milliseconds: 900),
   }) {
-    return navigator
-        .pushReplacement(_buildFadeRoute(widget: widget, duration: duration));
+    final route = _buildFadeRoute(widget: widget, duration: duration);
+
+    if (replace) {
+      return navigator.pushReplacement(route);
+    } else {
+      return navigator.push(route);
+    }
   }
 
   Route _buildFadeRoute({
