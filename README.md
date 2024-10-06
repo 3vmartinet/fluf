@@ -16,7 +16,16 @@ FLUF means Flutter Leveraging User Functions.
 
 ## Features
 
+### Animated Widgets
+
+These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationController`.
+- `FlingWidget`
+
 ### Extensions
+
+#### `BoxConstraints` extensions:
+- `areMaxConstraintsValid`: maximum dimensions are finite
+- `areMinConstraintsValid`: minimum dimensions are finite
 
 #### `BuildContext` extensions:
 - `theme` : shortcut for `Theme.of(context)`
