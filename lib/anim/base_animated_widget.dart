@@ -10,7 +10,7 @@ abstract class BaseAnimatedWidget extends StatefulWidget {
       required this.child,
       this.delay,
       this.interval,
-      this.duration,
+      required this.duration,
       required this.futureHolder});
 
   @override
@@ -30,7 +30,7 @@ abstract class BaseAnimatedWidget extends StatefulWidget {
   final Widget child;
   final Duration? delay;
   final Duration? interval;
-  final Duration? duration;
+  final Duration duration;
   final FutureHolder futureHolder;
 }
 
@@ -44,7 +44,7 @@ class BaseAnimatedWidgetState extends State<BaseAnimatedWidget>
     super.initState();
 
     _controller = AnimationController(
-      duration: widget.duration ?? const Duration(seconds: 1),
+      duration: widget.duration,
       vsync: this,
     )..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
