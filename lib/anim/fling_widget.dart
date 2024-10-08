@@ -11,22 +11,27 @@ import 'package:flutter/services.dart';
 const _rotateAnimation = "rotateAnimation";
 
 class FlingWidget extends BaseAnimatedWidget {
-  const FlingWidget(
-      {super.key,
-      super.delay,
-      super.interval,
-      required super.duration,
-      required super.child,
-      this.onFlinged,
-      this.flingOnTap = false,
-      this.curve = Curves.easeInOut,
-      this.rotationCount = 1,
-      required super.futureHolder});
+  const FlingWidget({
+    super.key,
+    super.delay,
+    super.interval,
+    super.duration,
+    required super.child,
+    required super.futureHolder,
+    this.onFlinged,
+    this.flingOnTap = false,
+    this.curve = Curves.easeInOut,
+    this.rotationCount = 1,
+    this.velocity = 1.0,
+    this.springDescription,
+  });
 
   final Function()? onFlinged;
   final bool flingOnTap;
   final Curve curve;
   final int rotationCount;
+  final double velocity;
+  final SpringDescription? springDescription;
 
   @override
   Animations registerAnimations(AnimationController controller) => {
@@ -38,7 +43,8 @@ class FlingWidget extends BaseAnimatedWidget {
   void animate(AnimationController controller, FutureHolder holder) {
     if (!holder.isDisposed()) {
       holder.add(Future.sync(() => controller.reset()));
-      holder.add(controller.fling(velocity: 5.0));
+      holder.add(controller.fling(
+          velocity: velocity, springDescription: springDescription));
     }
   }
 

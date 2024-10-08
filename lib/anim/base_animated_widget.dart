@@ -30,7 +30,7 @@ abstract class BaseAnimatedWidget extends StatefulWidget {
   final Widget child;
   final Duration? delay;
   final Duration? interval;
-  final Duration duration;
+  final Duration? duration;
   final FutureHolder futureHolder;
 }
 
