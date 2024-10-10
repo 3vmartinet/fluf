@@ -10,6 +10,8 @@ import 'package:flutter/services.dart';
 
 const _rotateAnimation = "rotateAnimation";
 
+enum FlingAxis { x, y, z }
+
 class FlingWidget extends BaseAnimatedWidget {
   const FlingWidget({
     super.key,
@@ -19,6 +21,7 @@ class FlingWidget extends BaseAnimatedWidget {
     required super.child,
     required super.futureHolder,
     this.onFlinged,
+    this.axis = FlingAxis.y,
     this.flingOnTap = false,
     this.curve = Curves.easeInOut,
     this.rotationCount = 1,
@@ -32,6 +35,7 @@ class FlingWidget extends BaseAnimatedWidget {
   final int rotationCount;
   final double velocity;
   final SpringDescription? springDescription;
+  final FlingAxis axis;
 
   @override
   Animations registerAnimations(AnimationController controller) => {
@@ -78,8 +82,7 @@ class FlingWidget extends BaseAnimatedWidget {
             builder: (context, child) {
               if (constraints.areMaxConstraintsValid()) {
                 return Transform(
-                    transform: Matrix4.rotationY(
-                        animations[_rotateAnimation]?.value ?? 0.0),
+                    transform: _buildMatrix(animations),
                     origin: Offset(
                         constraints.maxWidth / 2, constraints.maxHeight / 2),
                     child: super.child);
@@ -99,5 +102,18 @@ class FlingWidget extends BaseAnimatedWidget {
             }),
       ),
     );
+  }
+
+  _buildMatrix(Animations animations) {
+    final value = animations[_rotateAnimation]?.value ?? 0.0;
+
+    switch (axis) {
+      case FlingAxis.x:
+        return Matrix4.rotationX(value);
+      case FlingAxis.y:
+        return Matrix4.rotationY(value);
+      case FlingAxis.z:
+        return Matrix4.rotationZ(value);
+    }
   }
 }
