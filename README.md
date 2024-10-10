@@ -49,6 +49,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 
 #### `List` extensions:
 - `getMainDiagonalIntersections()` : indexes list of diagonals intersecting the main diagonal, if the list can be represented as a 2 dimensional array, returns `null` otherwise. E.g: `[0, 1, 2, 3].getMainDiagonalIntersections()` returns `[[0], [1,2], [3]]`.
+- `getHorizontalIntersections()`: indexes list of horizontal intersections of the 2 dimensional array.
 
 #### Object scope extensions:
 - `let(Function(T))`: invoke lambda passing receiver object
