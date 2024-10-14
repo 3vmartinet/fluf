@@ -26,7 +26,7 @@ extension StringExtensions on String {
       ..drawRect(
           Rect.fromPoints(
               Offset.zero, Offset(size.toDouble(), size.toDouble())),
-          Paint()..color = _fallbackColor)
+          Paint()..color = Colors.white)
       ..drawParagraph(toParagraph(), Offset.zero);
 
     final ui.Image image = await recorder.endRecording().toImage(size, size);
