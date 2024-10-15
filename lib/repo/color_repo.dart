@@ -11,11 +11,15 @@ class ColorRepo {
 
   final Map<String, Color> _cache = {};
 
-  Future compute({required Characters emojis}) async {
+  Future compute({
+    required Characters emojis,
+    required TextStyle textStyle,
+  }) async {
     for (final emoji in emojis) {
       if (!_cache.containsKey(emoji)) {
-        _cache[emoji] = await emoji.color();
-        log("Computed color for $emoji");
+        final color = await emoji.color(textStyle);
+        _cache[emoji] = color;
+        log("Computed color for $emoji (${color.red} / ${color.green} / ${color.blue}})");
       }
     }
   }

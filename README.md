@@ -61,6 +61,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 
 #### `TextStyle` extensions:
 - `bold()`: copy of this TextStlye with bold font weight
+- `toUiTextStyle()`: convert a Theme's text style to a Dart `ui` package's `TextStyle`
 
 ### Helpers
 
