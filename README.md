@@ -81,6 +81,11 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `compute(Characters)`: compute and cache average color of each emoji from given characters
 - `get(String)`: get given emoji's color, or null
 
+### `DateTimeRepo`:
+- `now`: now as `DateTime` according to local timezone
+- `nowUtc`: now as UTC `DateTime` 
+- `epochMs`: elapsed milliseconds since Unix epoch
+
 #### `ThemeRepo`:
 - `lightTheme()`: Material 3 light theme data
 - `darkTheme()`: Material 3 dark theme data

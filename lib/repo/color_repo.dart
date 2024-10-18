@@ -19,7 +19,7 @@ class ColorRepo {
       if (!_cache.containsKey(emoji)) {
         final color = await emoji.color(textStyle);
         _cache[emoji] = color;
-        log("Computed color for $emoji (${color.red} / ${color.green} / ${color.blue}})");
+        log("Computed color for $emoji [${emoji.codeUnits}] (${color.red} / ${color.green} / ${color.blue}})");
       }
     }
   }
