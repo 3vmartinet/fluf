@@ -70,7 +70,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 
 #### `WidgetBuilderFactory`:
 - `buildLoadingState`
-- `buildEmptyState`
+- `buildInfoState`
 
 ### Repositories
 

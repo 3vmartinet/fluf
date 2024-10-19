@@ -22,13 +22,15 @@ class WidgetBuilderFactory {
     ));
   }
 
-  Widget buildEmptyState({
+  Widget buildInfoState({
     required BuildContext context,
     required String header,
     required String subheader,
+    TextStyle? headerStyle,
+    TextStyle? subHeaderStyle,
     required IconData icon,
-    String? cta,
-    Function()? callback,
+    Widget? cta,
+    Widget? secondaryCta,
   }) {
     return Center(
         child: Padding(
@@ -45,16 +47,21 @@ class WidgetBuilderFactory {
               padding: const EdgeInsets.all(8.0),
               child: Text(header,
                   textAlign: TextAlign.center,
-                  style: context.textTheme.headlineMedium),
+                  style: headerStyle ?? context.textTheme.headlineMedium),
             ),
             Text(subheader,
                 textAlign: TextAlign.center,
-                style: context.textTheme.bodyMedium),
+                style: subHeaderStyle ?? context.textTheme.bodyMedium),
             if (cta != null)
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: OutlinedButton(onPressed: callback, child: Text(cta)),
-              )
+                child: cta,
+              ),
+            if (secondaryCta != null)
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: secondaryCta,
+              ),
           ]),
     ));
   }
