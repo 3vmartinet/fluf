@@ -64,6 +64,9 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `bold()`: copy of this TextStlye with bold font weight
 - `toUiTextStyle()`: convert a Theme's text style to a Dart `ui` package's `TextStyle`
 
+#### `ScrollController` extensions:
+- `progress`: current progress from 0.0 to 1.0.
+
 ### Helpers
 
 #### `FutureHolder` : 
