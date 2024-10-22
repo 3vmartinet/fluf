@@ -1,7 +1,11 @@
 import 'dart:math';
 
+import 'package:collection/collection.dart';
+
 typedef Intersection = List<int>;
 typedef Intersections = List<Intersection>;
+
+const _listEquality = ListEquality();
 
 extension ListExtensions<T extends Object> on List<T> {
   double get _sideSqrt => sqrt(length);
@@ -46,5 +50,9 @@ extension ListExtensions<T extends Object> on List<T> {
 
     return List.generate(
         _side, (i) => List.generate(_side, (j) => (i * _side) + j));
+  }
+
+  bool containsValue(dynamic value) {
+    return any((list) => _listEquality.equals(list as List?, value));
   }
 }

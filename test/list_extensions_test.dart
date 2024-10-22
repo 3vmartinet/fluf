@@ -155,4 +155,27 @@ void main() {
 
     expect(grid.getHorizontalIntersections(), intersections);
   });
+
+  test('containsValue', () {
+    final emojiCodeUnits = [
+      [55358, 56793, 8205, 9794, 65039],
+      [9889, 65039],
+      [55358, 56713],
+      [9889],
+      [55356, 57328],
+      [55357, 56422],
+      [55357, 56423],
+      [55357, 56333],
+      [55357, 56448]
+    ];
+
+    final matcher1 = [9889, 65039];
+    final matcher2 = [9889];
+
+    expect(emojiCodeUnits.contains(matcher1), false);
+    expect(emojiCodeUnits.contains(matcher2), false);
+
+    expect(emojiCodeUnits.containsValue(matcher1), true);
+    expect(emojiCodeUnits.containsValue(matcher2), true);
+  });
 }
