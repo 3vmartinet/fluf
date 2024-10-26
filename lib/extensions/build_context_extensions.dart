@@ -29,6 +29,18 @@ extension BuildContextExtensions on BuildContext {
     ));
   }
 
+  Future revealFrom({
+    required Widget widget,
+    Duration duration = const Duration(milliseconds: 500),
+    required Alignment alignment,
+  }) {
+    return navigator.push(_buildRevealRoute(
+      widget: widget,
+      duration: duration,
+      alignment: alignment,
+    ));
+  }
+
   Future<void> fadeTo({
     required Widget widget,
     bool replace = true,
@@ -74,6 +86,34 @@ extension BuildContextExtensions on BuildContext {
 
         return SlideTransition(
           position: animation.drive(tween),
+          child: child,
+        );
+      },
+    );
+  }
+
+  Route<Object?> _buildRevealRoute(
+      {required Widget widget,
+      required Duration duration,
+      required Alignment alignment}) {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => widget,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        final begin = alignment;
+        const end = Alignment.center;
+        const curve = Curves.ease;
+
+        final scaleAnimation = Tween<double>(begin: 0.1, end: 1.0).animate(
+          CurvedAnimation(parent: animation, curve: curve),
+        );
+
+        final alignmentAnimation = Tween(begin: begin, end: end).animate(
+          CurvedAnimation(parent: scaleAnimation, curve: curve),
+        );
+
+        return ScaleTransition(
+          scale: scaleAnimation,
+          alignment: alignmentAnimation.value,
           child: child,
         );
       },

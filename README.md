@@ -34,7 +34,8 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `navigator`: shortcut for `Navigator.of(BuildContext)`
 - `pop()`: shortcut for `Navigator.of(BuildContext).pop()`
 - `fadeTo(Widget)`: push and replace current widget with given `Widget` with fade animation
-- `slideTo(Widget, Duration, Axis)`: push given `Widget` with slide animation
+- `slideTo(Widget, Duration, Axis)`: push `Widget` with slide animation
+- `revealFrom(Widget, Duration, Alignment)`: reveal (scale and translate) `Widget` from `Alignment` corner
 - `showSnackBar(Widget)` : show a SnackBar with given `content`, using context`s ScaffoldMessenger
 
 #### `Color` extensions:
