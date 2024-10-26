@@ -34,7 +34,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `navigator`: shortcut for `Navigator.of(BuildContext)`
 - `pop()`: shortcut for `Navigator.of(BuildContext).pop()`
 - `fadeTo(Widget)`: push and replace current widget with given `Widget` with fade animation
-- `navigateTo(Widget)`: push given `Widget` with slide animation
+- `slideTo(Widget, Duration, Axis)`: push given `Widget` with slide animation
 - `showSnackBar(Widget)` : show a SnackBar with given `content`, using context`s ScaffoldMessenger
 
 #### `Color` extensions:
@@ -46,6 +46,9 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `isReady()`: shortcut for snapshot's connection state == `done` and snapshot has data
 - `isLoading()`: shortcut for snapshot's connection state == `waiting`
 - `isComplete()`: 
+
+#### `Duration` extensions:
+- `hms()`: format as HH:MM:SS String
 
 #### `List` extensions:
 - `getMainDiagonalIntersections()`: indexes list of diagonals intersecting the main diagonal, if the list can be represented as a 2 dimensional array, returns `null` otherwise. E.g: `[0, 1, 2, 3].getMainDiagonalIntersections()` returns `[[0], [1,2], [3]]`.

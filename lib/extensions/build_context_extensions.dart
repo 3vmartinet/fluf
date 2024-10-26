@@ -17,9 +17,16 @@ extension BuildContextExtensions on BuildContext {
     return navigator.pop(result);
   }
 
-  Future navigateTo(Widget widget) {
-    return navigator.push(_buildRoute(
-        widget: widget, duration: const Duration(milliseconds: 500)));
+  Future slideTo({
+    required Widget widget,
+    Duration duration = const Duration(milliseconds: 500),
+    Axis axis = Axis.horizontal,
+  }) {
+    return navigator.push(_buildSlideRoute(
+      widget: widget,
+      duration: duration,
+      axis: axis,
+    ));
   }
 
   Future<void> fadeTo({
@@ -48,25 +55,25 @@ extension BuildContextExtensions on BuildContext {
     );
   }
 
-  Route _buildRoute({
+  Route _buildSlideRoute({
     required Widget widget,
     required Duration duration,
+    required Axis axis,
   }) {
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) => widget,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        const begin = Offset(1.0, 0.0);
+        final begin = axis == Axis.horizontal
+            ? const Offset(1.0, 0.0)
+            : const Offset(0.0, 1.0);
         const end = Offset.zero;
         const curve = Curves.ease;
 
-        final tween = Tween(begin: begin, end: end);
-        final curvedAnimation = CurvedAnimation(
-          parent: animation,
-          curve: curve,
-        );
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
         return SlideTransition(
-          position: tween.animate(curvedAnimation),
+          position: animation.drive(tween),
           child: child,
         );
       },
