@@ -70,6 +70,9 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 #### `ScrollController` extensions:
 - `progress`: current progress from 0.0 to 1.0.
 
+#### `PageController` extensions:
+- `atomicPage`: current page index as non-nullable integer
+
 ### Helpers
 
 #### `FutureHolder` : 
