@@ -10,8 +10,7 @@ void main() {
 
     expect(
       "01:01:01",
-      const Duration(hours: 1, minutes: 1, seconds: 1)
-          .hms(skipHours: false, skipMinutes: false),
+      const Duration(hours: 1, minutes: 1, seconds: 1).hms(skipHours: false),
     );
 
     expect(
@@ -21,7 +20,7 @@ void main() {
 
     expect(
       "01:01",
-      const Duration(hours: 0, minutes: 1, seconds: 1).hms(skipMinutes: false),
+      const Duration(hours: 0, minutes: 1, seconds: 1).hms(),
     );
 
     expect(
@@ -30,19 +29,13 @@ void main() {
     );
 
     expect(
-      "01",
+      "00:01",
       const Duration(hours: 0, minutes: 0, seconds: 1).hms(),
     );
 
     expect(
       "00:00:01",
-      const Duration(hours: 0, minutes: 0, seconds: 1)
-          .hms(skipHours: false, skipMinutes: false),
-    );
-
-    expect(
-      "01",
-      const Duration(hours: 0, minutes: 0, seconds: 1).hms(),
+      const Duration(hours: 0, minutes: 0, seconds: 1).hms(skipHours: false),
     );
   });
 }
