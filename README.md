@@ -56,6 +56,9 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `getHorizontalIntersections()`: indexes list of horizontal intersections of the 2 dimensional array.
 - `containsValue`: perform value-based comparison to look for an item in a list, instead of reference-based.
 
+- `findClosestIndex(double value)`: returns index of closest item to `value`, or `-1` if no item can't be found
+- `findContainingIndexes(double target)`: finds indexes of items where `value` lies in between 
+
 #### Object scope extensions:
 - `let(Function(T))`: invoke lambda passing receiver object
 - `asWidgetStateProperty(Map<WidgetState, T>)`: map object as `WidgetStateProperty`
