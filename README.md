@@ -59,7 +59,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `findClosestIndex(double value)`: returns index of closest item to `value`, or `-1` if no item can't be found
 - `findContainingIndexes(double target)`: finds indexes of items where `value` lies in between 
 
-#### Object scope extensions:
+### Object scope extensions:
 - `let(Function(T))`: invoke lambda passing receiver object
 - `asWidgetStateProperty(Map<WidgetState, T>)`: map object as `WidgetStateProperty`
 
@@ -76,6 +76,11 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 
 #### `PageController` extensions:
 - `atomicPage`: current page index as non-nullable integer
+
+### UI
+
+#### `CustomPainter`
+- `RayPainter`
 
 ### Helpers
 
@@ -115,23 +120,3 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `heavyHapticFeedback()`
 - `selectionHapticFeedback()`
 - `vibrateFeedback()`
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
-```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
