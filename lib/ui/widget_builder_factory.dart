@@ -33,9 +33,9 @@ class WidgetBuilderFactory {
     Widget? secondaryCta,
   }) {
     return Center(
-        child: Padding(
-      padding: const EdgeInsets.all(24.0),
-      child: Column(
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -45,9 +45,13 @@ class WidgetBuilderFactory {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(header,
+              child: FittedBox(
+                child: Text(
+                  header,
                   textAlign: TextAlign.center,
-                  style: headerStyle ?? context.textTheme.headlineMedium),
+                  style: headerStyle ?? context.textTheme.headlineMedium,
+                ),
+              ),
             ),
             Text(subheader,
                 textAlign: TextAlign.center,
@@ -62,7 +66,9 @@ class WidgetBuilderFactory {
                 padding: const EdgeInsets.all(8.0),
                 child: secondaryCta,
               ),
-          ]),
-    ));
+          ],
+        ),
+      ),
+    );
   }
 }
