@@ -1,16 +1,3 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
 Welcome to FLUF, the package that provides convenience functions to develop your Flutter app.
 FLUF means Flutter Leveraging User Functions.
 
@@ -22,6 +9,11 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `FlingWidget`
 
 ### Extensions
+
+#### `AsyncSnapshot` extensions:
+- `isReady()`: shortcut for snapshot's connection state == `done` and snapshot has data
+- `isLoading()`: shortcut for snapshot's connection state == `waiting`
+- `isComplete()`: 
 
 #### `BoxConstraints` extensions:
 - `areMaxConstraintsValid`: maximum dimensions are finite
@@ -43,13 +35,17 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `plusDelta(int)`: color with added `delta` in each of RGB values
 - `asPressableProperty()`: `WidgetStateProperty` with reduced opacity for pressed state
 
-#### `AsyncSnapshot` extensions:
-- `isReady()`: shortcut for snapshot's connection state == `done` and snapshot has data
-- `isLoading()`: shortcut for snapshot's connection state == `waiting`
-- `isComplete()`: 
-
 #### `Duration` extensions:
 - `hms()`: format as HH:MM:SS String
+
+
+#### `double` extensions:
+- `seconds`: equivalent `Duration` object from seconds value
+
+#### `int` extensions:
+- `milliseconds`: equivalent `Duration` object from milliseconds value
+- `ms`: shortcut for `milliseconds`
+- `seconds`: equivalent `Duration` object from seconds value
 
 #### `List` extensions:
 - `getMainDiagonalIntersections()`: indexes list of diagonals intersecting the main diagonal, if the list can be represented as a 2 dimensional array, returns `null` otherwise. E.g: `[0, 1, 2, 3].getMainDiagonalIntersections()` returns `[[0], [1,2], [3]]`.
