@@ -29,6 +29,7 @@ class WidgetBuilderFactory {
     TextStyle? headerStyle,
     TextStyle? subHeaderStyle,
     required IconData icon,
+    Color? iconColor,
     Widget? cta,
     Widget? secondaryCta,
   }) {
@@ -41,7 +42,7 @@ class WidgetBuilderFactory {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Icon(icon),
+              child: Icon(icon, color: iconColor),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
