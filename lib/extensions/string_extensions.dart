@@ -54,7 +54,7 @@ extension StringExtensions on String {
       log("$this count = $count -> fallback will be used");
     }
     return count > 0
-        ? Color.fromARGB(0, r ~/ count, g ~/ count, b ~/ count).withOpacity(1)
+        ? Color.fromARGB(0, r ~/ count, g ~/ count, b ~/ count).withAlpha(255)
         : _fallbackColor;
   }
 }
