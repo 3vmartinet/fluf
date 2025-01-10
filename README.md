@@ -7,6 +7,7 @@ FLUF means Flutter Leveraging User Functions.
 
 These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationController`.
 - `FlingWidget`
+- `RevealWidget`
 
 ### Extensions
 
