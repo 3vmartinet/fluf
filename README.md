@@ -74,6 +74,9 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 #### `PageController` extensions:
 - `atomicPage`: current page index as non-nullable integer
 
+#### `WidgetExtensions` extensions:
+- `addSemantics(label, hint, value)`: wrap widget into a Semantics widget
+
 ### UI
 
 #### `CustomPainter`
