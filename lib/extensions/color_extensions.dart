@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
 
@@ -10,6 +11,15 @@ extension ColorExtensions on Color {
 
   Color minusDelta(int delta) => _delta(delta, false);
   Color plusDelta(int delta) => _delta(delta, true);
+
+  Color deltaWithBrightnessOf(BuildContext context, int delta) {
+    switch (MediaQuery.platformBrightnessOf(context)) {
+      case Brightness.dark:
+        return minusDelta(delta);
+      case Brightness.light:
+        return plusDelta(delta);
+    }
+  }
 
   Color _delta(int delta, bool lighten) {
     int increaseByOrBound(int value, int plus) =>
