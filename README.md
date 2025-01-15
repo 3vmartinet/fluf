@@ -96,9 +96,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 #### `AssetRepo`:
 - `loadJsonList`
 
-#### `ColorRepo`:
-- `compute(Characters)`: compute and cache average color of each emoji from given characters
-- `get(String)`: get given emoji's color, or null
+#### `ColorRepo`: see `ColorRepoMixin`
 
 ### `DateTimeRepo`:
 - `now`: now as `DateTime` according to local timezone
@@ -113,6 +111,10 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 
 #### `AnimateOnPressMixin`
  - Set a value (origin 1.0) back and forth from `press()` to `release()` mixin calls. E.g : Create a widget that animates when it is pressed, and animates back once released.
+
+#### `ColorRepoMixin`:
+- `compute(Characters)`: compute and cache average color of each emoji from given characters
+- `get(String)`: get given emoji's color, or null
 
 #### `HapticFeedbackMixin`
 - `lightHapticFeedback()`
