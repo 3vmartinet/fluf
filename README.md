@@ -35,7 +35,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `minusDelta(int)`: color with subtracted `delta` in each of RGB values
 - `plusDelta(int)`: color with added `delta` in each of RGB values
 - `asPressableProperty()`: `WidgetStateProperty` with reduced opacity for pressed state
-- `deltaWithBrightnessOf(BuildContext, int)`: apply delta depending on platform brightness setting
+- `deltaWithBrightnessOf(BuildContext context, int delta, bool? inverse)`: apply delta depending on platform brightness setting
 
 #### `Duration` extensions:
 - `hms()`: format as HH:MM:SS String

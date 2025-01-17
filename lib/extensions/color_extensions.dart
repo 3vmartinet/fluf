@@ -12,12 +12,16 @@ extension ColorExtensions on Color {
   Color minusDelta(int delta) => _delta(delta, false);
   Color plusDelta(int delta) => _delta(delta, true);
 
-  Color deltaWithBrightnessOf(BuildContext context, int delta) {
+  Color deltaWithBrightnessOf(
+    BuildContext context, {
+    required int delta,
+    bool? inverse,
+  }) {
     switch (MediaQuery.platformBrightnessOf(context)) {
       case Brightness.dark:
-        return minusDelta(delta);
+        return inverse == true ? plusDelta(delta) : minusDelta(delta);
       case Brightness.light:
-        return plusDelta(delta);
+        return inverse == true ? minusDelta(delta) : plusDelta(delta);
     }
   }
 
