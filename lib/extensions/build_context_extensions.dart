@@ -8,6 +8,8 @@ extension BuildContextExtensions on BuildContext {
   ColorScheme get colorScheme => theme.colorScheme;
 
   NavigatorState get navigator => Navigator.of(this);
+  Brightness get brightness => MediaQuery.platformBrightnessOf(this);
+  bool get isDarkBrightness => brightness == Brightness.dark;
 
   void showSnackBar(Widget content) {
     ScaffoldMessenger.of(this).showSnackBar(SnackBar(content: content));

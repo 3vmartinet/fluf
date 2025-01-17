@@ -30,6 +30,8 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `slideTo(Widget, Duration, Axis)`: push `Widget` with slide animation
 - `revealFrom(Widget, Duration, Alignment)`: reveal (scale and translate) `Widget` from `Alignment` corner
 - `showSnackBar(Widget)` : show a SnackBar with given `content`, using context`s ScaffoldMessenger
+- `brightness` : platform brightness setting
+- `isDarkBrightness` : if platform brightness is dark
 
 #### `Color` extensions:
 - `minusDelta(int)`: color with subtracted `delta` in each of RGB values
