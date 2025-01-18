@@ -66,6 +66,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 #### `String` extensions:
 - `toParagraph()`: map to `dart:ui` `Paragraph`
 - `async color()`: compute average color (for emojis) 
+- `sizeOfStyle(TextStyle?)`: compute size spanned by this string with given style 
 
 #### `TextStyle` extensions:
 - `bold()`: copy of this TextStlye with bold font weight

@@ -57,4 +57,13 @@ extension StringExtensions on String {
         ? Color.fromARGB(0, r ~/ count, g ~/ count, b ~/ count).withAlpha(255)
         : _fallbackColor;
   }
+
+  Size sizeOfStyle(TextStyle? style) {
+    final TextPainter textPainter = TextPainter(
+      text: TextSpan(text: this, style: style),
+      textDirection: TextDirection.ltr,
+    )..layout();
+
+    return textPainter.size;
+  }
 }
