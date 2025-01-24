@@ -11,8 +11,15 @@ extension BuildContextExtensions on BuildContext {
   Brightness get brightness => MediaQuery.platformBrightnessOf(this);
   bool get isDarkBrightness => brightness == Brightness.dark;
 
-  void showSnackBar(Widget content) {
-    ScaffoldMessenger.of(this).showSnackBar(SnackBar(content: content));
+  void showSnackBar(Widget widget, {bool? floating}) {
+    ScaffoldMessenger.of(this).showSnackBar(
+      SnackBar(
+        content: widget,
+        behavior: floating == true
+            ? SnackBarBehavior.floating
+            : SnackBarBehavior.fixed,
+      ),
+    );
   }
 
   void pop({Object? result}) {
