@@ -6,6 +6,7 @@ extension BuildContextExtensions on BuildContext {
   ThemeData get theme => Theme.of(this);
   TextTheme get textTheme => theme.textTheme;
   ColorScheme get colorScheme => theme.colorScheme;
+  Locale get locale => Localizations.localeOf(this);
   NavigatorState get navigator => Navigator.of(this);
   Brightness get brightness => MediaQuery.platformBrightnessOf(this);
   bool get isDarkBrightness => brightness == Brightness.dark;

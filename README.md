@@ -25,6 +25,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `textTheme` : shortcut for `Theme.of(context).textTheme`
 - `colorScheme`: shortcut for `Theme.of(context).colorScheme`
 - `navigator`: shortcut for `Navigator.of(BuildContext)`
+- `locale`: shortcut for `Localizations.localeOf(this)`
 - `pop()`: shortcut for `Navigator.of(BuildContext).pop()`
 - `fadeTo(Widget)`: push and replace current widget with given `Widget` with fade animation
 - `slideTo(Widget, Duration, Axis)`: push `Widget` with slide animation
