@@ -13,14 +13,16 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
-  Widget toHero(Object tag) {
-    return Hero(tag: tag, child: this);
+  Widget toHero(Object? tag) {
+    return tag != null ? Hero(tag: tag, child: this) : this;
   }
 
-  Widget toMaterialHero(Object tag) {
-    return Hero(
-      tag: tag,
-      child: Material(color: Colors.transparent, child: this),
-    );
+  Widget toMaterialHero(Object? tag) {
+    return tag != null
+        ? Hero(
+            tag: tag,
+            child: Material(color: Colors.transparent, child: this),
+          )
+        : this;
   }
 }

@@ -82,10 +82,11 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 
 #### `WidgetExtensions` extensions:
 - `addSemantics(label, hint, value)`: wrap widget into a Semantics widget
-- `toHero(Object tag)` : wrap into `Hero`
-- `toMaterialHero(Object tag)` : wrap into a transparent `Material` widget, and into `Hero`. 
+- `toHero(Object? tag)` : wrap into `Hero`. Do nothing and return this if tag is null.
+- `toMaterialHero(Object? tag)` : wrap into a transparent `Material` widget, and into `Hero`. 
   This extension is useful for `Text` widgets with different styles, or scenarri where the Hero transition
   underlines the animated widget with yellow lines, indicating that the source and target widgets differ.
+  Do nothing and return this if tag is null.
 
 ### UI
 
