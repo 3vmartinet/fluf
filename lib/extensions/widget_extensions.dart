@@ -12,4 +12,15 @@ extension WidgetExtensions on Widget {
         value: value ?? label,
         child: this,
       );
+
+  Widget toHero(Object tag) {
+    return Hero(tag: tag, child: this);
+  }
+
+  Widget toMaterialHero(Object tag) {
+    return Hero(
+      tag: tag,
+      child: Material(color: Colors.transparent, child: this),
+    );
+  }
 }
