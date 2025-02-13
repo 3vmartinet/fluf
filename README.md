@@ -62,8 +62,10 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `findContainingIndexes(double target)`: finds indexes of items where `value` lies in between 
 
 ### Object scope extensions:
-- `let(Function(T))`: invoke lambda passing receiver object
+- `let(R Function(T))`: invoke lambda passing receiver object and return lambda's result
+- `also(void Function(T))`: invoke lambda passing receiver object, and return this object
 - `asWidgetStateProperty(Map<WidgetState, T>)`: map object as `WidgetStateProperty`
+- `logType(String)`: log a message using `dart:developer`'s `log` with `name` attribute set to object's `runtimeType`
 
 #### `String` extensions:
 - `toParagraph()`: map to `dart:ui` `Paragraph`
