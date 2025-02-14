@@ -66,6 +66,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `also(void Function(T))`: invoke lambda passing receiver object, and return this object
 - `asWidgetStateProperty(Map<WidgetState, T>)`: map object as `WidgetStateProperty`
 - `logType(String)`: log a message using `dart:developer`'s `log` with `name` attribute set to object's `runtimeType`
+- `tryCast<T>` : attempt cast to type, returns `null` on failure
 
 #### `String` extensions:
 - `toParagraph()`: map to `dart:ui` `Paragraph`

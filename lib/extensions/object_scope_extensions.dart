@@ -10,7 +10,9 @@ extension ObjectScopeExtensions<T, R> on T {
     return this;
   }
 
-  logType(String message) => log(message, name: runtimeType.toString());
+  void logType(String message) => log(message, name: runtimeType.toString());
+
+  TARGET? tryCast<TARGET>() => this is TARGET ? this as TARGET : null;
 
   WidgetStateProperty<T> asWidgetStateProperty({Map<WidgetState, T>? states}) {
     return WidgetStateProperty.resolveWith((appliedStates) {
