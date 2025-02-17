@@ -1,3 +1,3 @@
 extension DoubleExtensions on double {
-  Duration get seconds => Duration(milliseconds: this ~/ 1000);
+  Duration get seconds => Duration(milliseconds: (this * 1000).toInt());
 }
