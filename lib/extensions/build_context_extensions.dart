@@ -10,7 +10,8 @@ extension BuildContextExtensions on BuildContext {
   NavigatorState get navigator => Navigator.of(this);
   Brightness get brightness => MediaQuery.platformBrightnessOf(this);
   bool get isDarkBrightness => brightness == Brightness.dark;
-  Orientation get orientation => MediaQuery.of(this).orientation;
+  Orientation get orientation => MediaQuery.orientationOf(this);
+  Size get mediaQuerySize => MediaQuery.sizeOf(this);
 
   void showSnackBar(Widget widget, {bool? floating}) {
     ScaffoldMessenger.of(this).showSnackBar(

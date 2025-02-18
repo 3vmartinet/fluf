@@ -34,6 +34,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `brightness` : platform brightness setting
 - `isDarkBrightness` : if platform brightness is dark
 - `orientation` : orientation
+- `mediaQuerySize` : size
 
 #### `Color` extensions:
 - `minusDelta(int)`: color with subtracted `delta` in each of RGB values
@@ -44,9 +45,11 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 #### `Duration` extensions:
 - `hms()`: format as HH:MM:SS String
 
-
 #### `double` extensions:
 - `seconds`: equivalent `Duration` object from seconds value
+
+#### `GlobalKey` extensions:
+- `center`: global center position as `Offset?` of this key's `Widget` 
 
 #### `int` extensions:
 - `milliseconds`: equivalent `Duration` object from milliseconds value
