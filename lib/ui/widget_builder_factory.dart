@@ -2,8 +2,24 @@ import 'package:fluf/extensions/build_context_extensions.dart';
 import 'package:flutter/material.dart';
 
 class WidgetBuilderFactory {
-  Widget buildLoadingState(
-      {required BuildContext context, String? loadingHeadlineText}) {
+  static bool _uppercaseHeader = false;
+  static TextStyle? _headerStyle;
+  static TextStyle? _subHeaderStyle;
+
+  static void setStyles({
+    TextStyle? headerStyle,
+    TextStyle? subHeaderStyle,
+    bool uppercaseHeader = false,
+  }) {
+    _headerStyle = headerStyle;
+    _subHeaderStyle = subHeaderStyle;
+    _uppercaseHeader = uppercaseHeader;
+  }
+
+  Widget buildLoadingState({
+    required BuildContext context,
+    String? loadingHeadlineText,
+  }) {
     return Center(
         child: Padding(
       padding: const EdgeInsets.all(24.0),
@@ -48,15 +64,21 @@ class WidgetBuilderFactory {
               padding: const EdgeInsets.all(8.0),
               child: FittedBox(
                 child: Text(
-                  header,
+                  _uppercaseHeader ? header.toUpperCase() : header,
                   textAlign: TextAlign.center,
-                  style: headerStyle ?? context.textTheme.headlineMedium,
+                  style: headerStyle ??
+                      _headerStyle ??
+                      context.textTheme.headlineMedium,
                 ),
               ),
             ),
-            Text(subheader,
-                textAlign: TextAlign.center,
-                style: subHeaderStyle ?? context.textTheme.bodyMedium),
+            Text(
+              subheader,
+              textAlign: TextAlign.center,
+              style: subHeaderStyle ??
+                  _subHeaderStyle ??
+                  context.textTheme.bodyMedium,
+            ),
             if (cta != null)
               Padding(
                 padding: const EdgeInsets.all(8.0),
