@@ -13,14 +13,14 @@ extension BuildContextExtensions on BuildContext {
   Orientation get orientation => MediaQuery.orientationOf(this);
   Size get mediaQuerySize => MediaQuery.sizeOf(this);
 
-  void showSnackBar(
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnackBar(
     Widget widget, {
     bool? floating,
     AnimationStyle? animationStyle,
     ShapeBorder? shapeBorder,
     SnackBarAction? action,
   }) {
-    ScaffoldMessenger.of(this).showSnackBar(
+    return ScaffoldMessenger.of(this).showSnackBar(
       SnackBar(
         content: widget,
         behavior: floating == true
