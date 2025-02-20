@@ -7,8 +7,8 @@ class WidgetBuilderFactory {
   static TextStyle? _subHeaderStyle;
 
   static void setStyles({
-    TextStyle? headerStyle,
-    TextStyle? subHeaderStyle,
+    required TextStyle? headerStyle,
+    required TextStyle? subHeaderStyle,
     bool uppercaseHeader = false,
   }) {
     _headerStyle = headerStyle;
