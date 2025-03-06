@@ -117,6 +117,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 
 ### `DateTimeRepo`:
 - `now`: now as `DateTime` according to local timezone
+- `nowDate`: same as `now` with all time-related fields set to 0
 - `nowUtc`: now as UTC `DateTime` 
 - `epochMs`: elapsed milliseconds since Unix epoch
 
