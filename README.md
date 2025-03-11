@@ -140,3 +140,8 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `heavyHapticFeedback()`
 - `selectionHapticFeedback()`
 - `vibrateFeedback()`
+
+### Widgets
+
+- `Shimmer` : manages a shimmering shine onto multiple `ShimmerLoadingWidget`
+- `ShimmerLoadingWidget` : a wrapper for a single widget with a shimmering loading state
