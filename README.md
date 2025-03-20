@@ -98,6 +98,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 
 #### `CustomPainter`
 - `RayPainter`
+- `WaterfallPainter` : Emoji grid painter with waterfall animation
 
 ### Helpers
 

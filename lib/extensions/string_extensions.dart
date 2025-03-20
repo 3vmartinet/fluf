@@ -5,21 +5,22 @@ import 'dart:ui' as ui;
 import 'package:fluf/extensions/text_style_extensions.dart';
 import 'package:flutter/material.dart';
 
-const _drawSize = 24;
+const _drawSize = 24.0;
 const _fallbackColor = Colors.transparent;
 
 extension StringExtensions on String {
   ui.Paragraph toParagraph(TextStyle textStyle) {
+    final size = textStyle.fontSize;
     final builder = ui.ParagraphBuilder(
       ui.ParagraphStyle(
         textAlign: TextAlign.center,
-        fontSize: _drawSize.toDouble(),
+        fontSize: size,
       ),
     )..pushStyle(textStyle.toUiTextStyle());
     builder.addText(this);
 
     final paragraph = builder.build()
-      ..layout(ui.ParagraphConstraints(width: _drawSize.toDouble()));
+      ..layout(ui.ParagraphConstraints(width: size ?? _drawSize));
 
     return paragraph;
   }
@@ -35,7 +36,10 @@ extension StringExtensions on String {
           Paint()..color = Colors.white)
       ..drawParagraph(toParagraph(textStyle), Offset.zero);
 
-    final ui.Image image = await recorder.endRecording().toImage(size, size);
+    final ui.Image image = await recorder.endRecording().toImage(
+          size.toInt(),
+          size.toInt(),
+        );
     final bytes = await image.toByteData();
     final data = bytes?.buffer.asUint8List() ?? Uint8List(0);
 

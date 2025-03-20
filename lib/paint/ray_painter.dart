@@ -7,8 +7,11 @@ class RayPainter extends CustomPainter {
   final Color color1;
   final Color color2;
 
-  const RayPainter(
-      {required this.rotation, required this.color1, required this.color2});
+  const RayPainter({
+    required this.rotation,
+    required this.color1,
+    required this.color2,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
