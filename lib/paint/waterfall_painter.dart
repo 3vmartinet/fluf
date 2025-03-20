@@ -40,7 +40,7 @@ class WaterfallPainter extends BasePainter {
           pattern.toParagraph(style),
           Offset(
             i * patternSize * spread,
-            y * spread - patternSize / 3,
+            y * spread - patternSize,
           ),
         );
       }
