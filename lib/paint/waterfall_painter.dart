@@ -27,7 +27,7 @@ class WaterfallPainter extends BasePainter {
     final int drawHeight = height;
 
     final countX = (size.width + patternSize) ~/ patternSize;
-    final countY = drawHeight ~/ patternSize;
+    final countY = (drawHeight ~/ patternSize) * 2;
 
     for (int i = 0; i < countX; i++) {
       for (int j = 0; j < countY; j++) {
