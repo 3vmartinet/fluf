@@ -9,10 +9,6 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `FlingWidget`
 - `RevealWidget`
 
-#### Controllers
-
-- `PageIndicatorController` : provides a main `PageController` syncing a indicator `PageController`
-
 ### Extensions
 
 #### `AsyncSnapshot` extensions:
