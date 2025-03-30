@@ -86,6 +86,9 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 #### `PageController` extensions:
 - `atomicPage`: current page index as non-nullable integer
 
+#### `Route` extensions:
+- `isRoot`: if the current route name denotes to '/'
+
 #### `WidgetExtensions` extensions:
 - `addSemantics(label, hint, value)`: wrap widget into a Semantics widget
 - `toHero(Object? tag)` : wrap into `Hero`. Do nothing and return this if tag is null.
