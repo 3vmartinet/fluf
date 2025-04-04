@@ -45,6 +45,7 @@ class WidgetBuilderFactory {
     TextStyle? headerStyle,
     TextStyle? subHeaderStyle,
     required IconData icon,
+    Widget? iconWidgetOverride,
     Color? iconColor,
     Widget? cta,
     Widget? secondaryCta,
@@ -63,7 +64,7 @@ class WidgetBuilderFactory {
           children: [
             Padding(
               padding: iconPadding,
-              child: Icon(icon, color: iconColor),
+              child: iconWidgetOverride ?? Icon(icon, color: iconColor),
             ),
             Padding(
               padding: titlePadding,
