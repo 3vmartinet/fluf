@@ -44,7 +44,7 @@ class WidgetBuilderFactory {
     required String subheader,
     TextStyle? headerStyle,
     TextStyle? subHeaderStyle,
-    required IconData icon,
+    IconData? icon,
     Widget? iconWidgetOverride,
     Color? iconColor,
     Widget? cta,
