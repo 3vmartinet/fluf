@@ -48,20 +48,25 @@ class WidgetBuilderFactory {
     Color? iconColor,
     Widget? cta,
     Widget? secondaryCta,
+    EdgeInsets padding = const EdgeInsets.all(24.0),
+    EdgeInsets iconPadding = const EdgeInsets.all(8.0),
+    EdgeInsets titlePadding = const EdgeInsets.all(8.0),
+    EdgeInsets ctaPadding = const EdgeInsets.all(8.0),
+    EdgeInsets secondaryCtaPadding = const EdgeInsets.all(8.0),
   }) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: padding,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: iconPadding,
               child: Icon(icon, color: iconColor),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: titlePadding,
               child: FittedBox(
                 child: Text(
                   _uppercaseHeader ? header.toUpperCase() : header,
@@ -81,12 +86,12 @@ class WidgetBuilderFactory {
             ),
             if (cta != null)
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: ctaPadding,
                 child: cta,
               ),
             if (secondaryCta != null)
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: secondaryCtaPadding,
                 child: secondaryCta,
               ),
           ],
