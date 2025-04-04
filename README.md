@@ -75,7 +75,8 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `toParagraph()`: map to `dart:ui` `Paragraph`
 - `async color()`: compute average color (for emojis) 
 - `sizeOfStyle(TextStyle?)`: compute size spanned by this string with given style 
-
+- `captialize` : make first character upper case
+- `captitalizeAll` : make first character of all space-separated items uppercase
 #### `TextStyle` extensions:
 - `bold()`: copy of this TextStlye with bold font weight
 - `toUiTextStyle()`: convert a Theme's text style to a Dart `ui` package's `TextStyle`

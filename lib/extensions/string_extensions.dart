@@ -9,6 +9,14 @@ const _drawSize = 24.0;
 const _fallbackColor = Colors.transparent;
 
 extension StringExtensions on String {
+  String captitalize() {
+    return isEmpty ? this : "${this[0].toUpperCase()}${substring(1)}";
+  }
+
+  String captitalizeAll() {
+    return isEmpty ? this : split(" ").map((e) => e.captitalize()).join(" ");
+  }
+
   ui.Paragraph toParagraph(TextStyle textStyle) {
     final size = textStyle.fontSize;
     final builder = ui.ParagraphBuilder(
