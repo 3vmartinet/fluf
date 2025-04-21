@@ -64,6 +64,9 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `findClosestIndex(double value)`: returns index of closest item to `value`, or `-1` if no item can't be found
 - `findContainingIndexes(double target)`: finds indexes of items where `value` lies in between 
 
+#### `TimeOfDay` extensions:
+- `minutes` : as minutes
+
 ### Object scope extensions:
 - `let(R Function(T))`: invoke lambda passing receiver object and return lambda's result
 - `also(void Function(T))`: invoke lambda passing receiver object, and return this object
