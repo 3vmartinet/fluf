@@ -18,6 +18,10 @@ class FutureHolder {
     return future;
   }
 
+  Future<List> awaitAll() async {
+    return await Future.wait(_futures);
+  }
+
   void dispose() {
     _disposed = true;
 

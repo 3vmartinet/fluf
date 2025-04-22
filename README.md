@@ -110,7 +110,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 ### Helpers
 
 #### `FutureHolder` : 
-- Container for `Future`-s with ability to dispose them all on demand
+- Container for `Future`-s with ability to await/dispose them all on demand
 
 #### `WidgetBuilderFactory`:
 - `buildLoadingState`
