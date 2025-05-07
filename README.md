@@ -63,6 +63,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 
 - `findClosestIndex(double value)`: returns index of closest item to `value`, or `-1` if no item can't be found
 - `findContainingIndexes(double target)`: finds indexes of items where `value` lies in between 
+- `randomElement()` : returns a random element within this list
 
 #### `TimeOfDay` extensions:
 - `minutes` : as minutes
@@ -128,6 +129,9 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `nowDate`: same as `now` with all time-related fields set to 0
 - `nowUtc`: now as UTC `DateTime` 
 - `epochMs`: elapsed milliseconds since Unix epoch
+
+#### `RandomRepo`:
+- `nextInt(length)`
 
 #### `ThemeRepo`:
 - `lightTheme()`: Material 3 light theme data

@@ -2,6 +2,7 @@ import 'dart:core';
 import 'dart:math';
 
 import 'package:collection/collection.dart';
+import 'package:fluf/repo/random_repo.dart';
 
 typedef Intersection = List<int>;
 typedef Intersections = List<Intersection>;
@@ -85,4 +86,6 @@ extension ListExtensions<T extends Object> on List<T> {
   bool containsValue(dynamic value) {
     return any((list) => _listEquality.equals(list as List?, value));
   }
+
+  T randomElement() => this[RandomRepo().nextInt(length)];
 }
