@@ -17,4 +17,5 @@ class DateTimeRepo {
   DateTime get nowUtc => DateTime.timestamp();
 
   int get epochMs => nowUtc.millisecondsSinceEpoch;
+  int get utcOffset => now.timeZoneOffset.inMinutes;
 }
