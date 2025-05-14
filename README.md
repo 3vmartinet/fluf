@@ -66,7 +66,9 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `randomElement()` : returns a random element within this list
 
 #### `TimeOfDay` extensions:
-- `minutes` : as minutes
+- `inMinutes` : in minutes
+- `toUTC(offset)` : in UTC time
+- `toLocal(offset)` : in local time
 
 ### Object scope extensions:
 - `let(R Function(T))`: invoke lambda passing receiver object and return lambda's result
