@@ -43,11 +43,13 @@ extension BuildContextExtensions on BuildContext {
     required Widget widget,
     Duration duration = const Duration(milliseconds: 500),
     Axis axis = Axis.horizontal,
+    String? routeName,
   }) {
     return navigator.push(_buildSlideRoute(
       widget: widget,
       duration: duration,
       axis: axis,
+      routeName: routeName,
     ));
   }
 
@@ -67,8 +69,10 @@ extension BuildContextExtensions on BuildContext {
     required Widget widget,
     bool replace = true,
     Duration duration = const Duration(milliseconds: 900),
+    String? routeName,
   }) {
-    final route = _buildFadeRoute(widget: widget, duration: duration);
+    final route = _buildFadeRoute(
+        widget: widget, duration: duration, routeName: routeName);
 
     if (replace) {
       return navigator.pushReplacement(route);
@@ -80,12 +84,14 @@ extension BuildContextExtensions on BuildContext {
   Route _buildFadeRoute({
     required Widget widget,
     required Duration duration,
+    String? routeName,
   }) {
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) => widget,
       transitionsBuilder: (context, animation, secondaryAnimation, child) =>
           FadeTransition(opacity: animation, child: child),
       transitionDuration: duration,
+      settings: routeName != null ? RouteSettings(name: routeName) : null,
     );
   }
 
@@ -93,8 +99,10 @@ extension BuildContextExtensions on BuildContext {
     required Widget widget,
     required Duration duration,
     required Axis axis,
+    String? routeName,
   }) {
     return PageRouteBuilder(
+      settings: routeName != null ? RouteSettings(name: routeName) : null,
       pageBuilder: (context, animation, secondaryAnimation) => widget,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         final begin = axis == Axis.horizontal

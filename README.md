@@ -95,6 +95,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 
 #### `Route` extensions:
 - `isRoot`: if the current route name denotes to '/'
+- `isNamed(String)`: if the route setting's name matches given value
 
 #### `WidgetExtensions` extensions:
 - `addSemantics(label, hint, value)`: wrap widget into a Semantics widget
