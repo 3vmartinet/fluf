@@ -93,11 +93,14 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 #### `PageController` extensions:
 - `atomicPage`: current page index as non-nullable integer
 
+#### `RenderRepaintBoundary` extensions
+- `toFile(directoryPath, filename, format)`: save this widget as image file 
+
 #### `Route` extensions:
 - `isRoot`: if the current route name denotes to '/'
 - `isNamed(String)`: if the route setting's name matches given value
 
-#### `WidgetExtensions` extensions:
+#### `Widget` extensions:
 - `addSemantics(label, hint, value)`: wrap widget into a Semantics widget
 - `toHero(Object? tag)` : wrap into `Hero`. Do nothing and return this if tag is null.
 - `toMaterialHero(Object? tag)` : wrap into a transparent `Material` widget, and into `Hero`. 
