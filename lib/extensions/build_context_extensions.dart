@@ -1,6 +1,7 @@
 library fluf;
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 extension BuildContextExtensions on BuildContext {
   ThemeData get theme => Theme.of(this);
@@ -149,4 +150,7 @@ extension BuildContextExtensions on BuildContext {
       },
     );
   }
+
+  RenderRepaintBoundary? get renderRepaintBoundary =>
+      findRenderObject() as RenderRepaintBoundary?;
 }

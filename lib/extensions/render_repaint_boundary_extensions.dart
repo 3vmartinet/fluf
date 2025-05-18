@@ -8,9 +8,10 @@ extension RenderRepaintBoundaryExtensions on RenderRepaintBoundary {
   Future<String> toFile({
     required String directoryPath,
     required String filename,
+    ui.ImageByteFormat format = ui.ImageByteFormat.png,
   }) async {
     final image = await toImage();
-    final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
+    final bytes = await image.toByteData(format: format);
     final buffer = bytes?.buffer.asUint8List() ?? Uint8List(0);
 
     final targetFile = File('$directoryPath/$filename');

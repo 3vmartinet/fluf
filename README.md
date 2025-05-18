@@ -35,6 +35,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `isDarkBrightness` : if platform brightness is dark
 - `orientation` : orientation
 - `mediaQuerySize` : size
+- `renderRepaintBoundary` : return this context's [RenderObject] as [RenderRepaintBoundary?]
 
 #### `Color` extensions:
 - `minusDelta(int)`: color with subtracted `delta` in each of RGB values
