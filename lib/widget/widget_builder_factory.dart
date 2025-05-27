@@ -1,4 +1,5 @@
 import 'package:fluf/extensions/build_context_extensions.dart';
+import 'package:fluf/ui/breakpoint.dart';
 import 'package:flutter/material.dart';
 
 class WidgetBuilderFactory {
@@ -14,6 +15,17 @@ class WidgetBuilderFactory {
     _headerStyle = headerStyle;
     _subHeaderStyle = subHeaderStyle;
     _uppercaseHeader = uppercaseHeader;
+  }
+
+  Widget buildCenterChild(Breakpoint breakpoint, Widget child) {
+    return Center(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxWidth: breakpoint.maxWidth.toDouble(),
+        ),
+        child: child,
+      ),
+    );
   }
 
   Widget buildLoadingState({

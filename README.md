@@ -21,21 +21,22 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `areMinConstraintsValid`: minimum dimensions are finite
 
 #### `BuildContext` extensions:
-- `theme` : shortcut for `Theme.of(context)`
-- `textTheme` : shortcut for `Theme.of(context).textTheme`
+- `breakpoint` : current screen width `Breakpoint`
+- `brightness` : platform brightness setting
 - `colorScheme`: shortcut for `Theme.of(context).colorScheme`
-- `navigator`: shortcut for `Navigator.of(BuildContext)`
-- `locale`: shortcut for `Localizations.localeOf(this)`
-- `pop()`: shortcut for `Navigator.of(BuildContext).pop()`
 - `fadeTo(Widget)`: push and replace current widget with given `Widget` with fade animation
-- `slideTo(Widget, Duration, Axis)`: push `Widget` with slide animation
+- `isDarkBrightness` : if platform brightness is dark
+- `locale`: shortcut for `Localizations.localeOf(this)`
+- `mediaQuerySize` : size
+- `navigator`: shortcut for `Navigator.of(BuildContext)`
+- `orientation` : orientation
+- `pop()`: shortcut for `Navigator.of(BuildContext).pop()`
+- `renderRepaintBoundary` : return this context's [RenderObject] as [RenderRepaintBoundary?]
 - `revealFrom(Widget, Duration, Alignment)`: reveal (scale and translate) `Widget` from `Alignment` corner
 - `showSnackBar(Widget, bool? floating)` : show a SnackBar using context`s ScaffoldMessenger
-- `brightness` : platform brightness setting
-- `isDarkBrightness` : if platform brightness is dark
-- `orientation` : orientation
-- `mediaQuerySize` : size
-- `renderRepaintBoundary` : return this context's [RenderObject] as [RenderRepaintBoundary?]
+- `slideTo(Widget, Duration, Axis)`: push `Widget` with slide animation
+- `textTheme` : shortcut for `Theme.of(context).textTheme`
+- `theme` : shortcut for `Theme.of(context)`
 
 #### `Color` extensions:
 - `minusDelta(int)`: color with subtracted `delta` in each of RGB values
@@ -117,12 +118,16 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 
 ### Helpers
 
+#### `Breakpoint` :
+- enum defining Material 3 screen width breakpoints
+
 #### `FutureHolder` : 
 - Container for `Future`-s with ability to await/dispose them all on demand
 
 #### `WidgetBuilderFactory`:
 - `buildLoadingState`
 - `buildInfoState`
+- `buildCenterChild(Breakpoint, Widget)`
 
 ### Repositories
 

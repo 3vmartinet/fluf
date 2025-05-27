@@ -1,5 +1,6 @@
 library fluf;
 
+import 'package:fluf/ui/breakpoint.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -112,8 +113,9 @@ extension BuildContextExtensions on BuildContext {
         const end = Offset.zero;
         const curve = Curves.ease;
 
-        var tween =
-            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+        var tween = Tween(begin: begin, end: end).chain(
+          CurveTween(curve: curve),
+        );
 
         return SlideTransition(
           position: animation.drive(tween),
@@ -153,4 +155,20 @@ extension BuildContextExtensions on BuildContext {
 
   RenderRepaintBoundary? get renderRepaintBoundary =>
       findRenderObject() as RenderRepaintBoundary?;
+
+  Breakpoint get breakpoint {
+    final width = mediaQuerySize.width;
+
+    if (width < Breakpoint.compact.maxWidth) {
+      return Breakpoint.compact;
+    } else if (width < Breakpoint.medium.maxWidth) {
+      return Breakpoint.medium;
+    } else if (width < Breakpoint.expanded.maxWidth) {
+      return Breakpoint.expanded;
+    } else if (width < Breakpoint.large.maxWidth) {
+      return Breakpoint.large;
+    } else {
+      return Breakpoint.extraLarge;
+    }
+  }
 }
