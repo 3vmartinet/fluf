@@ -174,6 +174,6 @@ extension BuildContextExtensions on BuildContext {
 
   double getHorizontalPadding({double bodyWidthRatio = 0.66}) {
     final width = mediaQuerySize.width;
-    return (width - width + bodyWidthRatio) / 2;
+    return (width - width * bodyWidthRatio) / 2;
   }
 }
