@@ -25,6 +25,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `brightness` : platform brightness setting
 - `colorScheme`: shortcut for `Theme.of(context).colorScheme`
 - `fadeTo(Widget)`: push and replace current widget with given `Widget` with fade animation
+- `getHorizontalPadding(bodyWidthRatio)` : horizontal padding with desired body width ratio of screen width 
 - `isDarkBrightness` : if platform brightness is dark
 - `locale`: shortcut for `Localizations.localeOf(this)`
 - `mediaQuerySize` : size
