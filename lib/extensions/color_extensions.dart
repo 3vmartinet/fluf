@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:fluf/extensions/build_context_extensions.dart';
 import 'package:flutter/widgets.dart';
 
 extension ColorExtensions on Color {
@@ -17,7 +18,7 @@ extension ColorExtensions on Color {
     required int delta,
     bool? inverse,
   }) {
-    switch (MediaQuery.platformBrightnessOf(context)) {
+    switch (context.desiredBrightness) {
       case Brightness.dark:
         return inverse == true ? plusDelta(delta) : minusDelta(delta);
       case Brightness.light:

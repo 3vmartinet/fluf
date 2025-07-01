@@ -20,13 +20,16 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `areMaxConstraintsValid`: maximum dimensions are finite
 - `areMinConstraintsValid`: minimum dimensions are finite
 
+#### `BrightnessExtensions`
+- `isDark`
+
 #### `BuildContext` extensions:
 - `breakpoint` : current screen width `Breakpoint`
 - `brightness` : platform brightness setting
 - `colorScheme`: shortcut for `Theme.of(context).colorScheme`
+- `desiredBrightness` : desired user-defined brightness through [BuildContextOverride.themeMode]
 - `fadeTo(Widget)`: push and replace current widget with given `Widget` with fade animation
 - `getHorizontalPadding(bodyWidthRatio)` : horizontal padding with desired body width ratio of screen width 
-- `isDarkBrightness` : if platform brightness is dark
 - `locale`: shortcut for `Localizations.localeOf(this)`
 - `mediaQuerySize` : size
 - `navigator`: shortcut for `Navigator.of(BuildContext)`

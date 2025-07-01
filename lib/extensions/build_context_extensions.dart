@@ -1,5 +1,6 @@
 library fluf;
 
+import 'package:fluf/build_context_override.dart';
 import 'package:fluf/ui/breakpoint.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -11,7 +12,19 @@ extension BuildContextExtensions on BuildContext {
   Locale get locale => Localizations.localeOf(this);
   NavigatorState get navigator => Navigator.of(this);
   Brightness get brightness => MediaQuery.platformBrightnessOf(this);
-  bool get isDarkBrightness => brightness == Brightness.dark;
+
+  Brightness get desiredBrightness {
+    final themeMode = BuildContextOverride.themeMode;
+
+    if (themeMode == ThemeMode.light) {
+      return Brightness.light;
+    } else if (themeMode == ThemeMode.dark) {
+      return Brightness.dark;
+    } else {
+      return brightness;
+    }
+  }
+
   Orientation get orientation => MediaQuery.orientationOf(this);
   Size get mediaQuerySize => MediaQuery.sizeOf(this);
 
