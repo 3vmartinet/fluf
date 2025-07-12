@@ -11,19 +11,19 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 
 ### Extensions
 
-#### `AsyncSnapshot` extensions:
+#### `AsyncSnapshot` extensions
 - `isReady()`: shortcut for snapshot's connection state == `done` and snapshot has data
 - `isLoading()`: shortcut for snapshot's connection state == `waiting`
 - `isComplete()`: 
 
-#### `BoxConstraints` extensions:
+#### `BoxConstraints` extensions
 - `areMaxConstraintsValid`: maximum dimensions are finite
 - `areMinConstraintsValid`: minimum dimensions are finite
 
 #### `BrightnessExtensions`
 - `isDark`
 
-#### `BuildContext` extensions:
+#### `BuildContext` extensions
 - `breakpoint` : current screen width `Breakpoint`
 - `brightness` : platform brightness setting
 - `colorScheme`: shortcut for `Theme.of(context).colorScheme`
@@ -42,27 +42,30 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `textTheme` : shortcut for `Theme.of(context).textTheme`
 - `theme` : shortcut for `Theme.of(context)`
 
-#### `Color` extensions:
+#### `Color` extensions
 - `minusDelta(int)`: color with subtracted `delta` in each of RGB values
 - `plusDelta(int)`: color with added `delta` in each of RGB values
 - `asPressableProperty()`: `WidgetStateProperty` with reduced opacity for pressed state
 - `deltaWithBrightnessOf(BuildContext context, int delta, bool? inverse)`: apply delta depending on platform brightness setting
 
-#### `Duration` extensions:
+#### `DateTime` extensions
+- `isDayMonthToday`: if this date's day and month match today's ones
+
+#### `Duration` extensions
 - `hms()`: format as HH:MM:SS String
 
-#### `double` extensions:
+#### `double` extensions
 - `seconds`: equivalent `Duration` object from seconds value
 
-#### `GlobalKey` extensions:
+#### `GlobalKey` extensions
 - `center`: global center position as `Offset?` of this key's `Widget` 
 
-#### `int` extensions:
+#### `int` extensions
 - `milliseconds`: equivalent `Duration` object from milliseconds value
 - `ms`: shortcut for `milliseconds`
 - `seconds`: equivalent `Duration` object from seconds value
 
-#### `List` extensions:
+#### `List` extensions
 - `getMainDiagonalIntersections()`: indexes list of diagonals intersecting the main diagonal, if the list can be represented as a 2 dimensional array, returns `null` otherwise. E.g: `[0, 1, 2, 3].getMainDiagonalIntersections()` returns `[[0], [1,2], [3]]`.
 - `getHorizontalIntersections()`: indexes list of horizontal intersections of the 2 dimensional array.
 - `containsValue`: perform value-based comparison to look for an item in a list, instead of reference-based.
@@ -71,42 +74,42 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `findContainingIndexes(double target)`: finds indexes of items where `value` lies in between 
 - `randomElement()` : returns a random element within this list
 
-#### `TimeOfDay` extensions:
+#### `TimeOfDay` extensions
 - `inMinutes` : in minutes
 - `toUTC(offset)` : in UTC time
 - `toLocal(offset)` : in local time
 
-### Object scope extensions:
+### Object scope extensions
 - `let(R Function(T))`: invoke lambda passing receiver object and return lambda's result
 - `also(void Function(T))`: invoke lambda passing receiver object, and return this object
 - `asWidgetStateProperty(Map<WidgetState, T>)`: map object as `WidgetStateProperty`
 - `logType(String)`: log a message using `dart:developer`'s `log` with `name` attribute set to object's `runtimeType`
 - `tryCast<T>` : attempt cast to type, returns `null` on failure
 
-#### `String` extensions:
+#### `String` extensions
 - `toParagraph()`: map to `dart:ui` `Paragraph`
 - `async color()`: compute average color (for emojis) 
 - `sizeOfStyle(TextStyle?)`: compute size spanned by this string with given style 
 - `captialize` : make first character upper case
 - `captitalizeAll` : make first character of all space-separated items uppercase
-#### `TextStyle` extensions:
+#### `TextStyle` extensions
 - `bold()`: copy of this TextStlye with bold font weight
 - `toUiTextStyle()`: convert a Theme's text style to a Dart `ui` package's `TextStyle`
 
-#### `ScrollController` extensions:
+#### `ScrollController` extensions
 - `progress`: current progress from 0.0 to 1.0.
 
-#### `PageController` extensions:
+#### `PageController` extensions
 - `atomicPage`: current page index as non-nullable integer
 
 #### `RenderRepaintBoundary` extensions
 - `toFile(directoryPath, filename, format)`: save this widget as image file 
 
-#### `Route` extensions:
+#### `Route` extensions
 - `isRoot`: if the current route name denotes to '/'
 - `isNamed(String)`: if the route setting's name matches given value
 
-#### `Widget` extensions:
+#### `Widget` extensions
 - `addSemantics(label, hint, value)`: wrap widget into a Semantics widget
 - `toHero(Object? tag)` : wrap into `Hero`. Do nothing and return this if tag is null.
 - `toMaterialHero(Object? tag)` : wrap into a transparent `Material` widget, and into `Hero`. 
