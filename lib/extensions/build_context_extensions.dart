@@ -72,11 +72,13 @@ extension BuildContextExtensions on BuildContext {
     required Widget widget,
     Duration duration = const Duration(milliseconds: 500),
     required Alignment alignment,
+    String? routeName,
   }) {
     return navigator.push(_buildRevealRoute(
       widget: widget,
       duration: duration,
       alignment: alignment,
+      routeName: routeName,
     ));
   }
 
@@ -138,11 +140,14 @@ extension BuildContextExtensions on BuildContext {
     );
   }
 
-  Route<Object?> _buildRevealRoute(
-      {required Widget widget,
-      required Duration duration,
-      required Alignment alignment}) {
+  Route<Object?> _buildRevealRoute({
+    required Widget widget,
+    required Duration duration,
+    required Alignment alignment,
+    String? routeName,
+  }) {
     return PageRouteBuilder(
+      settings: routeName != null ? RouteSettings(name: routeName) : null,
       pageBuilder: (context, animation, secondaryAnimation) => widget,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         final begin = alignment;
