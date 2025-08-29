@@ -16,4 +16,6 @@ class AssetRepo {
 
     return list;
   }
+
+  Future<String> readFile(String path) => rootBundle.loadString(path);
 }

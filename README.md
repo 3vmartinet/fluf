@@ -140,6 +140,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 
 #### `AssetRepo`:
 - `loadJsonList`
+- `readFile`
 
 #### `ColorRepo`: see `ColorRepoMixin`
 
