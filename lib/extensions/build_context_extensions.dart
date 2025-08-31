@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 extension BuildContextExtensions on BuildContext {
+  static const double defaultBodyWidthRatio = 0.66;
+
   ThemeData get theme => Theme.of(this);
   TextTheme get textTheme => theme.textTheme;
   ColorScheme get colorScheme => theme.colorScheme;
@@ -190,8 +192,18 @@ extension BuildContextExtensions on BuildContext {
     }
   }
 
-  double getHorizontalPadding({double bodyWidthRatio = 0.66}) {
+  double getHorizontalPadding({double bodyWidthRatio = defaultBodyWidthRatio}) {
     final width = mediaQuerySize.width;
     return (width - width * bodyWidthRatio) / 2;
+  }
+
+  EdgeInsets getRecommendedPadding(BuildContext context,
+      {double fallbackHorizontal = 16,
+      double bodyWidthRatio = defaultBodyWidthRatio}) {
+    return EdgeInsets.symmetric(
+      horizontal: context.breakpoint == Breakpoint.compact
+          ? fallbackHorizontal
+          : context.getHorizontalPadding(bodyWidthRatio: bodyWidthRatio),
+    );
   }
 }
