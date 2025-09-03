@@ -9,6 +9,8 @@ const _drawSize = 24.0;
 const _fallbackColor = Colors.transparent;
 
 extension StringExtensions on String {
+  Uri toUri() => Uri.parse(this);
+
   String captitalize() {
     return isEmpty ? this : "${this[0].toUpperCase()}${substring(1)}";
   }

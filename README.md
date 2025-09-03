@@ -93,6 +93,8 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `sizeOfStyle(TextStyle?)`: compute size spanned by this string with given style 
 - `captialize` : make first character upper case
 - `captitalizeAll` : make first character of all space-separated items uppercase
+- `toUri` : parse this [String] as [Uri]
+
 #### `TextStyle` extensions
 - `bold()`: copy of this TextStlye with bold font weight
 - `toUiTextStyle()`: convert a Theme's text style to a Dart `ui` package's `TextStyle`
