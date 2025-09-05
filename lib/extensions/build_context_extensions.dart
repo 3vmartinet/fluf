@@ -1,5 +1,3 @@
-library fluf;
-
 import 'package:fluf/build_context_override.dart';
 import 'package:fluf/ui/breakpoint.dart';
 import 'package:flutter/material.dart';

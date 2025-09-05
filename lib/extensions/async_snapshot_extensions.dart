@@ -1,5 +1,3 @@
-library fluf;
-
 import 'package:flutter/material.dart';
 
 extension AsyncSnapshotExtensions on AsyncSnapshot {
