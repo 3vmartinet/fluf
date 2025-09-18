@@ -94,6 +94,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `captialize` : make first character upper case
 - `captitalizeAll` : make first character of all space-separated items uppercase
 - `toUri` : parse this [String] as [Uri]
+- `splitUpperCase([String delimiter = " "])` : split string at uppercase characters with optional delimiter. E.g: "camelCase" -> "camel Case"
 
 #### `TextStyle` extensions
 - `bold()`: copy of this TextStlye with bold font weight

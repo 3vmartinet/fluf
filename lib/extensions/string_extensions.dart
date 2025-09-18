@@ -80,4 +80,12 @@ extension StringExtensions on String {
 
     return textPainter.size;
   }
+
+  String splitUpperCase([String delimiter = " "]) {
+    if (isEmpty) return this;
+    return replaceAllMapped(
+      RegExp('(?<!$delimiter)(?<!^)[A-Z]'),
+      (match) => "$delimiter${match.group(0)}",
+    );
+  }
 }
