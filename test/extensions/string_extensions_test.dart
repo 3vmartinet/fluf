@@ -28,7 +28,7 @@ void main() {
     });
 
     test('custom delimiter works correctly', () {
-      expect('ThisIsATest'.splitUpperCase('_'), 'This_Is_A_Test');
+      expect('ThisIsATest'.splitUpperCase(delimiter: '_'), 'This_Is_A_Test');
     });
 
     test('handles numbers and special characters correctly', () {
