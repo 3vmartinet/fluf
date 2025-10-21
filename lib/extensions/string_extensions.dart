@@ -46,15 +46,22 @@ extension StringExtensions on String {
           Paint()..color = Colors.white)
       ..drawParagraph(toParagraph(textStyle), Offset.zero);
 
-    final ui.Image image = await recorder.endRecording().toImage(
-          size.toInt(),
-          size.toInt(),
-        );
+    final picture = recorder.endRecording();
+
+    final ui.Image image = await picture.toImage(
+      size.toInt(),
+      size.toInt(),
+    );
+
+    // Dispose picture ASAP to free native memory.
+    picture.dispose();
+
     final bytes = await image.toByteData();
     final data = bytes?.buffer.asUint8List() ?? Uint8List(0);
 
     int r = 0, g = 0, b = 0, count = 0;
     const inc = 4;
+
     for (var x = 0; (x + inc) < data.length; x += inc) {
       if (data[x] != 255 && data[x + 1] != 255 && data[x + 2] != 255) {
         r += data[x];
@@ -64,9 +71,12 @@ extension StringExtensions on String {
       }
     }
 
+    image.dispose();
+
     if (count <= 0) {
       log("$this count = $count -> fallback will be used");
     }
+
     return count > 0
         ? Color.fromARGB(0, r ~/ count, g ~/ count, b ~/ count).withAlpha(255)
         : _fallbackColor;
