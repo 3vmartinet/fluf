@@ -1,13 +1,9 @@
 import 'dart:math';
 
 class RandomRepo {
-  static RandomRepo? _instance;
-
-  factory RandomRepo() => _instance ?? RandomRepo._init();
-
   late final Random _random;
 
-  RandomRepo._init() {
+  RandomRepo() {
     _random = Random(DateTime.now().millisecondsSinceEpoch);
   }
 

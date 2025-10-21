@@ -146,8 +146,6 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `loadJsonList`
 - `readFile`
 
-#### `ColorRepo`: see `ColorRepoMixin`
-
 ### `DateTimeRepo`:
 - `now`: now as `DateTime` according to local timezone
 - `nowDate`: same as `now` with all time-related fields set to 0

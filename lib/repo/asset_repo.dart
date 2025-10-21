@@ -3,11 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 class AssetRepo {
-  static AssetRepo? _instance;
-
-  factory AssetRepo() => _instance ?? AssetRepo._init();
-
-  AssetRepo._init();
+  AssetRepo();
 
   /// Decodes a JSON file located at [assetPath]
   Future<List<dynamic>> loadJsonList(String assetPath) async {
