@@ -160,14 +160,14 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `lightTheme()`: Material 3 light theme data
 - `darkTheme()`: Material 3 dark theme data
 
+#### `ColorRepo`
+- `colorOfEmoji(String)`: compute tint color of given String emoji
+
+
 ### Mixins
 
 #### `AnimateOnPressMixin`
  - Set a value (origin 1.0) back and forth from `press()` to `release()` mixin calls. E.g : Create a widget that animates when it is pressed, and animates back once released.
-
-#### `ColorRepoMixin`:
-- `compute(Characters)`: compute and cache average color of each emoji from given characters
-- `get(String)`: get given emoji's color, or null
 
 #### `HapticFeedbackMixin`
 - `lightHapticFeedback()`
