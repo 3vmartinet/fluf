@@ -37,9 +37,9 @@ class ColorRepo {
     final bytes = (byteData ?? ByteData(0)).buffer.asUint8List();
 
     int r = 0, g = 0, b = 0, count = 0;
-    final bgr = background.r ~/ 1;
-    final bgg = background.g ~/ 1;
-    final bgb = background.b ~/ 1;
+    final bgr = (background.r * 255.0).round() & 0xff;
+    final bgg = (background.g * 255.0).round() & 0xff;
+    final bgb = (background.b * 255.0).round() & 0xff;
 
     for (int i = 0; i < bytes.length; i += 4 * stride) {
       final rr = bytes[i], gg = bytes[i + 1], bb = bytes[i + 2];
