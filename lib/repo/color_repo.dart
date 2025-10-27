@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 
@@ -26,14 +27,21 @@ class ColorRepo {
           ..pushStyle(style.toUiTextStyle())
           ..addText(emoji);
 
+    log("[fluf.ColorRepo] Layouting paragraph '$emoji'");
+
     final paragraph = para.build()
       ..layout(ui.ParagraphConstraints(width: drawSize.toDouble()));
 
     canvas.drawParagraph(paragraph, Offset.zero);
 
     final picture = recorder.endRecording();
+
     final ui.Image image = await picture.toImage(drawSize, drawSize);
+    picture.dispose();
+
     final byteData = await image.toByteData();
+    image.dispose();
+
     final bytes = (byteData ?? ByteData(0)).buffer.asUint8List();
 
     int r = 0, g = 0, b = 0, count = 0;
@@ -57,9 +65,6 @@ class ColorRepo {
     final Color result = (count > 0)
         ? Color.fromARGB(255, r ~/ count, g ~/ count, b ~/ count)
         : fallback;
-
-    image.dispose();
-    picture.dispose();
 
     return result;
   }
