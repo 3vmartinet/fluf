@@ -29,6 +29,8 @@ extension StringExtensions on String {
     )..pushStyle(textStyle.toUiTextStyle());
     builder.addText(this);
 
+    log("[fluf.StringExtensions.toParagraph] Layouting paragraph '$this'");
+
     final paragraph = builder.build()
       ..layout(ui.ParagraphConstraints(width: size ?? _drawSize));
 
@@ -83,6 +85,8 @@ extension StringExtensions on String {
   }
 
   Size sizeOfStyle(TextStyle? style) {
+    log("[fluf.StringExtensions.sizeOfStyle] Layouting paragraph '$this'");
+
     final TextPainter textPainter = TextPainter(
       text: TextSpan(text: this, style: style),
       textDirection: TextDirection.ltr,
