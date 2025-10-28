@@ -1,5 +1,7 @@
 import 'package:flutter/rendering.dart';
 
+Matrix4 _matrix4 = Matrix4.zero()..setIdentity();
+
 class SlidingGradientTransform extends GradientTransform {
   final double slidePercent;
 
@@ -7,6 +9,6 @@ class SlidingGradientTransform extends GradientTransform {
 
   @override
   Matrix4? transform(Rect bounds, {TextDirection? textDirection}) {
-    return Matrix4.translationValues(bounds.width * slidePercent, 0.0, 0.0);
+    return _matrix4..setTranslationRaw(bounds.width * slidePercent, 0.0, 0.0);
   }
 }

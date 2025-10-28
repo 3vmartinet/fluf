@@ -1,4 +1,3 @@
-import 'package:fluf/extensions/int_extensions.dart';
 import 'package:fluf/paint/sliding_gradient_transform.dart';
 import 'package:flutter/material.dart';
 
@@ -44,7 +43,7 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
     _controller = AnimationController.unbounded(vsync: this)
-      ..repeat(min: -0.5, max: 1.5, period: 1.seconds);
+      ..repeat(min: -0.5, max: 1.5, period: const Duration(seconds: 1));
   }
 
   @override

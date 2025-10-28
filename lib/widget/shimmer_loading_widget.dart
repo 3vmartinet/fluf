@@ -23,9 +23,11 @@ class _ShimmerLoadingWidgetState extends State<ShimmerLoadingWidget> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+
     if (_shimmerChanges != null) {
       _shimmerChanges!.removeListener(_onShimmerChange);
     }
+
     _shimmerChanges = Shimmer.of(context)?.shimmerChanges;
     if (_shimmerChanges != null) {
       _shimmerChanges!.addListener(_onShimmerChange);
