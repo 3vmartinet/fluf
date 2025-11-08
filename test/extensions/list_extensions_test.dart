@@ -178,4 +178,16 @@ void main() {
     expect(emojiCodeUnits.containsValue(matcher1), true);
     expect(emojiCodeUnits.containsValue(matcher2), true);
   });
+
+  test('randomElement returns null for empty list', () {
+    final emptyList = <int>[];
+    expect(emptyList.randomElement(), isNull);
+  });
+
+  test('randomElement returns element from list', () {
+    final list = [1, 2, 3, 4, 5];
+    final randomElement = list.randomElement();
+    expect(randomElement, isNotNull);
+    expect(list.contains(randomElement), isTrue);
+  });
 }

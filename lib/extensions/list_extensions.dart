@@ -87,5 +87,5 @@ extension ListExtensions<T extends Object> on List<T> {
     return any((list) => _listEquality.equals(list as List?, value));
   }
 
-  T randomElement() => this[RandomRepo().nextInt(length)];
+  T? randomElement() => isEmpty ? null : this[RandomRepo().nextInt(length)];
 }
