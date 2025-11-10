@@ -25,6 +25,7 @@ extension BuildContextExtensions on BuildContext {
     }
   }
 
+  double get devicePixelRatio => MediaQuery.of(this).devicePixelRatio;
   Orientation get orientation => MediaQuery.orientationOf(this);
   Size get mediaQuerySize => MediaQuery.sizeOf(this);
 

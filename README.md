@@ -28,6 +28,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `brightness` : platform brightness setting
 - `colorScheme`: shortcut for `Theme.of(context).colorScheme`
 - `desiredBrightness` : desired user-defined brightness through [BuildContextOverride.themeMode]
+- `devicePixelRatio` : number of device pixels for each logical pixel
 - `fadeTo(Widget)`: push and replace current widget with given `Widget` with fade animation
 - `getHorizontalPadding(bodyWidthRatio)` : horizontal padding with desired body width ratio of screen width
 - `getHorizontalPaddingEdgeInsets(context)` : get recommended horizontal padding depeneding on current breakpoint
