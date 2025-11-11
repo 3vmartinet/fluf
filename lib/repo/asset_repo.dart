@@ -14,4 +14,5 @@ class AssetRepo {
   }
 
   Future<String> readFile(String path) => rootBundle.loadString(path);
+  Future<ByteData> readFileAsBytes(String path) => rootBundle.load(path);
 }
