@@ -1,14 +1,18 @@
 import 'dart:developer';
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:fluf/extensions/text_style_extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 const _drawSize = 24.0;
 const _fallbackColor = Colors.transparent;
 
 extension StringExtensions on String {
+  ClipboardData toClipboardData() => ClipboardData(text: this);
+
+  Future<void> copyToClipboard() => Clipboard.setData(toClipboardData());
+
   Uri toUri() => Uri.parse(this);
 
   String captitalize() {

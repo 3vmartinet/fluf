@@ -96,6 +96,8 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `captitalizeAll` : make first character of all space-separated items uppercase
 - `toUri` : parse this [String] as [Uri]
 - `splitUpperCase([String delimiter = " "])` : split string at uppercase characters with optional delimiter. E.g: "camelCase" -> "camel Case"
+- `toClipboardData()` : create a `ClipboardData` object with `this` as text
+- `copyToClipboard()` : copy this string into the clipboard as clipboard data
 
 #### `TextStyle` extensions
 - `bold()`: copy of this TextStlye with bold font weight
