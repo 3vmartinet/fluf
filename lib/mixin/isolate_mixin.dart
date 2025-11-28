@@ -8,7 +8,7 @@ typedef IsolateWorkArgs = List<Object>;
 typedef IsolateWork = FutureOr Function(dynamic);
 typedef IsolateCallback<T> = FutureOr<T> Function();
 
-mixin ReceivePortMixin {
+mixin IsolateMixin {
   final _receivePort = ReceivePort();
   SendPort get _port => _receivePort.sendPort;
 
