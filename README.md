@@ -173,7 +173,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 #### `AnimateOnPressMixin`
  - Set a value (origin 1.0) back and forth from `press()` to `release()` mixin calls. E.g : Create a widget that animates when it is pressed, and animates back once released.
 
-#### `ReceivePortMixin`
+#### `IsolateMixin`
  - Use in combination with Isolates to conveniently wait for a return value
  
 #### `HapticFeedbackMixin`
