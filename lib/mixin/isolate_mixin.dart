@@ -9,7 +9,7 @@ typedef IsolateWork = FutureOr Function(dynamic);
 typedef IsolateCallback<T> = FutureOr<T> Function();
 
 mixin IsolateMixin {
-  final _receivePort = ReceivePort();
+  var _receivePort = ReceivePort();
   SendPort get _port => _receivePort.sendPort;
 
   Future<T?> waitForReceivedValue<T>() async {
@@ -29,16 +29,20 @@ mixin IsolateMixin {
 
     return completer.future.then((value) {
       subscription.cancel();
+      _receivePort.close();
       return value;
     });
   }
 
   Future<void> runIsolate(IsolateCallback callback) async {
     final rootIsolateToken = RootIsolateToken.instance;
+
     if (rootIsolateToken == null) {
       log("Cannot get the RootIsolateToken");
       return;
     }
+
+    _receivePort = ReceivePort();
 
     await Isolate.spawn(
       _wrapToIsolateWork(callback, rootIsolateToken, _port),
