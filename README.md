@@ -53,6 +53,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 #### `DateTime` extensions
 - `isDayMonthToday`: if this date's day and month match today's ones
 - `dayOfYear`
+- `daysInYear` : number of days in year, depending on leap years
 
 #### `Duration` extensions
 - `hms()`: format as HH:MM:SS String
