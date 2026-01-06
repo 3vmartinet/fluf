@@ -53,7 +53,6 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 #### `DateTime` extensions
 - `isDayMonthToday`: if this date's day and month match today's ones
 - `dayOfYear`
-- `daysInYear` : number of days in year, depending on leap years
 
 #### `Duration` extensions
 - `hms()`: format as HH:MM:SS String
@@ -69,6 +68,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `ms` : shortcut for `milliseconds`
 - `seconds` : equivalent `Duration` object from seconds value
 - `isLeapYear`
+- `daysInYear` : number of days in year, depending on leap years
 
 #### `List` extensions
 - `getMainDiagonalIntersections()`: indexes list of diagonals intersecting the main diagonal, if the list can be represented as a 2 dimensional array, returns `null` otherwise. E.g: `[0, 1, 2, 3].getMainDiagonalIntersections()` returns `[[0], [1,2], [3]]`.
