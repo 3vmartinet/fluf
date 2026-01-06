@@ -52,6 +52,7 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 
 #### `DateTime` extensions
 - `isDayMonthToday`: if this date's day and month match today's ones
+- `dayOfYear`
 
 #### `Duration` extensions
 - `hms()`: format as HH:MM:SS String
@@ -63,9 +64,10 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 - `center`: global center position as `Offset?` of this key's `Widget` 
 
 #### `int` extensions
-- `milliseconds`: equivalent `Duration` object from milliseconds value
-- `ms`: shortcut for `milliseconds`
-- `seconds`: equivalent `Duration` object from seconds value
+- `milliseconds` : equivalent `Duration` object from milliseconds value
+- `ms` : shortcut for `milliseconds`
+- `seconds` : equivalent `Duration` object from seconds value
+- `isLeapYear`
 
 #### `List` extensions
 - `getMainDiagonalIntersections()`: indexes list of diagonals intersecting the main diagonal, if the list can be represented as a 2 dimensional array, returns `null` otherwise. E.g: `[0, 1, 2, 3].getMainDiagonalIntersections()` returns `[[0], [1,2], [3]]`.

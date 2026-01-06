@@ -4,5 +4,5 @@ extension DateTimeExtensions on DateTime {
     return now.month == month && now.day == day;
   }
 
-  int dayOfYear() => toUtc().difference(DateTime.utc(year)).inDays + 1;
+  int get dayOfYear => toUtc().difference(DateTime.utc(year)).inDays + 1;
 }
