@@ -36,6 +36,7 @@ extension BuildContextExtensions on BuildContext {
     ShapeBorder? shapeBorder,
     SnackBarAction? action,
     Duration duration = const Duration(seconds: 4),
+    bool persist = false,
   }) {
     return ScaffoldMessenger.of(this).showSnackBar(
       SnackBar(
@@ -46,6 +47,7 @@ extension BuildContextExtensions on BuildContext {
         shape: shapeBorder,
         action: action,
         duration: duration,
+        persist: persist,
       ),
       snackBarAnimationStyle: animationStyle,
     );
