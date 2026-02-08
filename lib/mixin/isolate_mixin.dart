@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'dart:developer';
 import 'dart:isolate';
 
+import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:flutter/services.dart';
 
 typedef IsolateWorkArgs = List<Object>;
@@ -19,9 +19,9 @@ mixin IsolateMixin {
     final completer = Completer<T?>();
 
     final subscription = _receivePort.listen((message) {
-      log("Received $message");
+      debugPrint("Received $message");
       if (message is T) {
-        log("Complete with $message");
+        debugPrint("Complete with $message");
         completer.complete(message);
       } else {
         completer.completeError(
@@ -31,8 +31,10 @@ mixin IsolateMixin {
     });
 
     return completer.future.then((value) {
+      debugPrint("Cancel Isolate return value subscription");
       subscription.cancel();
       _receivePort.close();
+      _isolate?.kill();
       return value;
     });
   }
@@ -41,7 +43,7 @@ mixin IsolateMixin {
     final rootIsolateToken = RootIsolateToken.instance;
 
     if (rootIsolateToken == null) {
-      log("Cannot get the RootIsolateToken");
+      debugPrint("Cannot get the RootIsolateToken");
       return;
     }
 
@@ -64,7 +66,7 @@ mixin IsolateMixin {
 
       final result = await callback(args);
 
-      log("Send $result to port");
+      debugPrint("Send $result to port");
       sendPort.send(result);
     };
   }
