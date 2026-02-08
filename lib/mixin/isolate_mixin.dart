@@ -18,41 +18,55 @@ mixin IsolateMixin {
   Future<T?> waitForReceivedValue<T>() async {
     final completer = Completer<T?>();
 
-    final subscription = _receivePort.listen((message) {
-      debugPrint("Received $message");
-      if (message is T) {
-        debugPrint("Complete with $message");
-        completer.complete(message);
-      } else {
-        completer.completeError(
-          "Received message is not of type ${T.runtimeType} : $message",
-        );
-      }
-    });
+    final subscription = _receivePort.listen(
+      (message) {
+        debugPrint("Received $message");
+        if (message is T) {
+          debugPrint("Complete with $message");
+          completer.complete(message);
+        } else {
+          completer.completeError(
+            "Received message is not of type ${T.runtimeType} : $message",
+          );
+        }
+      },
+      cancelOnError: true,
+    );
 
     return completer.future.then((value) {
       debugPrint("Cancel Isolate return value subscription");
+
       subscription.cancel();
       _receivePort.close();
       _isolate?.kill();
+      _isolate = null;
+
       return value;
     });
   }
 
-  Future<void> runIsolate(IsolateCallback callback, IsolateArgs args) async {
+  Future<bool?> runIsolate(IsolateCallback callback, IsolateArgs args) async {
     final rootIsolateToken = RootIsolateToken.instance;
 
     if (rootIsolateToken == null) {
       debugPrint("Cannot get the RootIsolateToken");
-      return;
+      return null;
     }
 
+    if (_isolate != null) {
+      debugPrint("Isolate is already running");
+      return false;
+    }
+
+    _receivePort.close();
     _receivePort = ReceivePort();
 
     _isolate = await Isolate.spawn(
       _wrapToIsolateWork(callback, args, rootIsolateToken, _port),
       [rootIsolateToken, _port],
     );
+
+    return true;
   }
 
   IsolateWork _wrapToIsolateWork(
