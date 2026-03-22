@@ -104,6 +104,8 @@ These widgets extend from `BaseAnimatedWidget` which holds a Flutter `AnimationC
 
 #### `TextStyle` extensions
 - `bold()`: copy of this TextStlye with bold font weight
+- `italic()`: copy of this TextStlye with italic font style
+- `underline()`: copy of this TextStlye with underline decoration
 - `toUiTextStyle()`: convert a Theme's text style to a Dart `ui` package's `TextStyle`
 
 #### `ScrollController` extensions
