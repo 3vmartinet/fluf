@@ -202,6 +202,7 @@ extension BuildContextExtensions on BuildContext {
       {double fallbackHorizontal = 16,
       double bodyWidthRatio = defaultBodyWidthRatio}) {
     return EdgeInsets.symmetric(
+      vertical: 0,
       horizontal: context.breakpoint == Breakpoint.compact
           ? fallbackHorizontal
           : context.getHorizontalPadding(bodyWidthRatio: bodyWidthRatio),
