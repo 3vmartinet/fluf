@@ -18,24 +18,9 @@ jobs:
         with:
           channel: stable
           architecture: x64
-
-      - name: Get Flutter version
-        id: flutter-version
-        run: |
-          VERSION=$(flutter --version | head -1 | cut -f2 -d' ')
-          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
-
-      - name: Cache Flutter SDK
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.pub-cache
-            ${{ runner.tool_cache }}/flutter
-          key: flutter-${{ runner.os }}-${{ steps.flutter-version.outputs.VERSION }}
-          restore-keys: |
-            flutter-${{ runner.os }}-
+          cache: true
+          pub-cache: true
 
       - run: flutter --version
       - run: flutter pub get
       - run: flutter test
-
