@@ -14,6 +14,7 @@ extension RenderRepaintBoundaryExtensions on RenderRepaintBoundary {
   }) async {
     final image = await toImage(pixelRatio: pixelRatio);
     final bytes = await image.toByteData(format: format);
+    image.dispose();
     var buffer = bytes?.buffer.asUint8List() ?? Uint8List(0);
 
     if (customTransform != null) {
