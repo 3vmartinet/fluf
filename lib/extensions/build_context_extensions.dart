@@ -198,14 +198,14 @@ extension BuildContextExtensions on BuildContext {
     return (width - width * bodyWidthRatio) / 2;
   }
 
-  EdgeInsets getRecommendedPadding(BuildContext context,
+  EdgeInsets getRecommendedPadding(
       {double fallbackHorizontal = 16,
       double bodyWidthRatio = defaultBodyWidthRatio}) {
     return EdgeInsets.symmetric(
       vertical: 0,
-      horizontal: context.breakpoint == Breakpoint.compact
+      horizontal: breakpoint == Breakpoint.compact
           ? fallbackHorizontal
-          : context.getHorizontalPadding(bodyWidthRatio: bodyWidthRatio),
+          : getHorizontalPadding(bodyWidthRatio: bodyWidthRatio),
     );
   }
 }
