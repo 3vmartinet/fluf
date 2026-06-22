@@ -85,7 +85,7 @@ class FlingWidget extends BaseAnimatedWidget {
                     transform: _buildMatrix(animations),
                     origin: Offset(
                         constraints.maxWidth / 2, constraints.maxHeight / 2),
-                    child: super.child);
+                    child: RepaintBoundary(child: super.child));
               } else {
                 return SizedBox.square(
                   dimension: 70,
