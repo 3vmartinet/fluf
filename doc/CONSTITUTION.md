@@ -53,6 +53,25 @@ UI consistency and rendering performance are paramount.
 * **Const Constructors**: It is crucial for performance to mark as many widgets and classes as `const` as possible. 
 * **Context over Injection**: To facilitate the use of `const` constructors, these smaller private widgets MUST consume the data they need directly from the View Model via `BuildContext` extensions (e.g., `context.select`). Avoid injecting View Model data through their constructors, as this prevents the widget from being marked `const`.
 
+### Spacing Between Children
+* **Use the `spacing` Property**: Even gaps between the children of a `Row`, `Column`, `Flex` or `Wrap` MUST be expressed with the layout's own `spacing` property.
+* **Spacer Widgets Are Obsolete**: Do NOT interleave `Gap` widgets (from the `gap` package) or `SizedBox` spacers between children to achieve this. They were the pre-`spacing` workaround and are no longer permitted.
+    * *Rationale*: `spacing` states the gap once instead of once per boundary, keeps the children list to actual content, and removes a dependency and a widget per gap from the tree.
+* **Exception — Uneven Gaps**: A `SizedBox` remains acceptable for a one-off gap that differs from the layout's uniform `spacing`, or for reserving a fixed extent where no gap is being expressed.
+
+```dart
+// Correct
+Column(
+  spacing: ThemeRepo.spaceSmall,
+  children: [Text('Title'), Text('Subtitle')],
+);
+
+// Obsolete
+Column(
+  children: [Text('Title'), Gap(ThemeRepo.spaceSmall), Text('Subtitle')],
+);
+```
+
 ### Styling
 * **Centralized Theme**: All widget styling (colors, text styles, radiuses, shadows, padding) MUST be defined in a centralized `ThemeRepo` (or global Theme equivalent). 
 * **No Inline Styling**: Never style a widget directly in the `build` method using raw `TextStyle` or raw `Color` constructors unless it is a mathematically calculated derivation of the base theme.
