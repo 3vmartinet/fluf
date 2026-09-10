@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 abstract class BasePainter extends CustomPainter {
@@ -11,13 +12,13 @@ abstract class BasePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    if (Platform.isAndroid) {
+    if (!kIsWeb && Platform.isAndroid) {
       canvas.restore();
     }
 
     customPaint(canvas, size);
 
-    if (Platform.isAndroid) {
+    if (!kIsWeb && Platform.isAndroid) {
       canvas.save();
     }
   }
