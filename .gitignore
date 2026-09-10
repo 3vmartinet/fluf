@@ -21,3 +21,6 @@ doc/api/
 .flutter-plugins
 .flutter-plugins-dependencies
 .dart_tool
+
+# macOS Finder metadata
+.DS_Store
